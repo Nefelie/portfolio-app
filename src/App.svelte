@@ -13,7 +13,7 @@
 <div class="layout">
   <!-- Left Sidebar -->
   <div class="sidebar">
-    <img src="/src/assets/profilepic.jpg" alt="" class="profile-pic" />
+    <img src="public/assets/img/profilepic.jpg" alt="" class="profile-pic" />
     <h3>Nefelie Hemrich</h3>
     <p>
       MEng Maritime Engineering graduate from the University of Southampton, UK.
@@ -45,7 +45,7 @@
         <!-- Example Project 1 -->
         <div class="project">
           <div class="project-image">
-            <img src="/src/assets/MAChallenge.jpg" alt="Project Image" />
+            <img src="public/assets/img/MAChallenge.jpg" alt="Project Image" />
           </div>
           <div class="project-details">
             <h3>Marine Autonomy Challenge</h3>
@@ -69,7 +69,7 @@
         <!-- Example Project 2 -->
         <div class="project">
           <div class="project-image">
-            <img src="src/assets/ais-plotter.png" alt="Project Image" />
+            <img src="public/assets/img/ais-plotter.png" alt="Project Image" />
           </div>
           <div class="project-details">
             <h3>AIS Data Plotter Web App</h3>
@@ -91,7 +91,7 @@
         <!-- Example Project 3 -->
         <div class="project">
           <div class="project-image">
-            <img src="src/assets/imr.jpg" alt="Project Image" />
+            <img src="public/assets/img/imr.jpg" alt="Project Image" />
           </div>
           <div class="project-details">
             <h3>
@@ -108,8 +108,9 @@
               physical robotic platform. Developed a Graph SLAM algorithm
             </p>
             <div class="skills">
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">ROS2</span>
+              <span class="skill-tag">Gazebo</span>
+              <span class="skill-tag">Machine Learning</span>
             </div>
           </div>
         </div>
