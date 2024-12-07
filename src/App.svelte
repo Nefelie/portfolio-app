@@ -13,7 +13,11 @@
 <div class="layout">
   <!-- Left Sidebar -->
   <div class="sidebar">
-    <img src="public/assets/img/profilepic.jpg" alt="" class="profile-pic" />
+    <img
+      src="/portfolio-app/assets/img/profilepic.jpg"
+      alt=""
+      class="profile-pic"
+    />
     <h3>Nefelie Hemrich</h3>
     <p>
       MEng Maritime Engineering graduate from the University of Southampton, UK.
@@ -45,7 +49,10 @@
         <!-- Example Project 1 -->
         <div class="project">
           <div class="project-image">
-            <img src="public/assets/img/MAChallenge.jpg" alt="Project Image" />
+            <img
+              src="/portfolio-app/assets/img/MAChallenge.jpg"
+              alt="Project Image"
+            />
           </div>
           <div class="project-details">
             <h3>Marine Autonomy Challenge</h3>
@@ -69,7 +76,10 @@
         <!-- Example Project 2 -->
         <div class="project">
           <div class="project-image">
-            <img src="public/assets/img/ais-plotter.png" alt="Project Image" />
+            <img
+              src="/portfolio-app/assets/img/ais-plotter.png"
+              alt="Project Image"
+            />
           </div>
           <div class="project-details">
             <h3>AIS Data Plotter Web App</h3>
@@ -91,7 +101,7 @@
         <!-- Example Project 3 -->
         <div class="project">
           <div class="project-image">
-            <img src="public/assets/img/imr.jpg" alt="Project Image" />
+            <img src="/portfolio-app/assets/img/imr.jpg" alt="Project Image" />
           </div>
           <div class="project-details">
             <h3>
