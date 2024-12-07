@@ -1,0 +1,221 @@
+
+
+<main
+  class="w-full text-white font-Montserrat pb-12 scroll-behavior: smooth; overflow-scroll"
+>
+  <header class="bg-black">
+    <div
+      class="w-full max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center bg-black"
+    >
+      <!-- Updated Nav -->
+      <a
+        class="flex title-font font-medium items-center text-gray-50 mb-4 md:mb-0"
+        href=""
+      >
+        <span class="ml-3 text-xl font-bold" style="margin-left: 0;"
+          >Portfolio</span
+        >
+      </a>
+      <nav
+        class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+      >
+        <a
+          href=""
+          class="mr-5 font-bold lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+          >CV</a
+        >
+        <a
+          href=""
+          class="mr-5 font-bold lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+          >Projects</a
+        >
+        <a
+          href=""
+          class="mr-5 font-bold lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+          >Skills</a
+        >
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div
+    class="container mx-auto mt-4 md:mt-0 md:space-x-10 md:grid grid-cols-3 justify-center md:py-10"
+    id=""
+  >
+    <!-- <div class="grid justify-center items-center order-1 col-span-1">
+          <img
+            class="lg:h-80 md:h-64 h-40 rounded-full"
+            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+            alt=""
+          />
+        </div> -->
+    <div class="mt-4 md:mt-0 lg:justify-end col-span-2">
+      <h1
+        class="text-4xl text-gray-800 text-center md:text-left font-bold mb-6"
+      >
+        <span class="block xl:inline text-gray-50">Nefelie</span>
+        <span class="block text-indigo-600 xl:inline">Hemrich.</span>
+      </h1>
+      <p class="text-xl text-gray-500 text-center font-medium md:text-left">
+        I am an MEng Maritime Engineering graduate from the University of
+        Southampton, UK, passionate about using data science, AI/machine
+        learning, and robotics to solve complex challenges and drive innovation
+        in the maritime industry.
+      </p>
+      <button
+        class="block mt-6 mx-auto md:mx-0 text-sm py-2 px-6 text-red-50 font-semibold rounded bg-indigo-500 hover:bg-indigo-800"
+        ><a href="/src/assets/CV.pdf">Download CV</a></button
+      >
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="container mx-auto mt-4 md:mt-0 px-0 w-full" id="">
+    <section class="w-full text-center">
+      <h2
+        id="work"
+        class="secondary-title md:text-left text-4xl font-bold mb-6"
+      >
+        Projects
+      </h2>
+      <p class="section-paragraph md:text-left text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper
+        nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim
+        cursus lorem ac. Orci maecenas praesent arcu eget orci est orci nullam.
+        Leo purus est pellentesque massa at tortor, est. Aliquet pulvinar a
+        mattis sagittis. Suspendisse porta id elementum, massa.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="img-wrapper relative overflow-hidden">
+          <img
+            src="/src/assets/MAChallenge.jpg"
+            class="w-full bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
+            alt=""
+          />
+          <div
+            class="img-overlay w-full h-full absolute top-0 z-10 after:w-full after:rounded after:h-full after:absolute after:top-0 after:left-0 after:opacity-0 after:bg-black"
+          >
+            <h2
+              class="img__title relative mb-8 my-16 text-4xl font-Oswald font-thin text-white text-center transition duration 0.3s ease-in-out tracking-wider"
+            >
+              Marine Autonomy Challenge
+            </h2>
+            <a
+              class="img__link relative block w-3/5 p-2.5 font-Montserrat font-medium text-white no-underline hover:bg-secondary text-center text-base border-solid border-2 border-white tracking-wider mx-auto transition duration 0.3 ease-in-out hover:text-gray-50"
+              href="#">View Case Study</a
+            >
+          </div>
+        </div>
+        <div class="img-wrapper relative overflow-hidden">
+          <img
+            src="/src/assets/ais-plotter.png"
+            class="w-full bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
+            alt=""
+          />
+          <div
+            class="img-overlay w-full h-full absolute top-0 z-10 after:w-full after:rounded after:h-full after:absolute after:top-0 after:left-0 after:opacity-0 after:bg-black"
+          >
+            <h2
+              class="img__title relative mb-8 my-16 text-4xl font-Oswald font-thin text-white text-center transition duration 0.3s ease-in-out tracking-wider"
+            >
+              AIS Data Plotter
+            </h2>
+            <a
+              class="img__link relative block w-3/5 p-2.5 font-Montserrat font-medium text-white no-underline hover:bg-secondary text-center text-base border-solid border-2 border-white tracking-wider mx-auto transition duration 0.3 ease-in-out hover:text-gray-50"
+              href="#">View Case Study</a
+            >
+          </div>
+        </div>
+        <div class="img-wrapper relative overflow-hidden">
+          <img
+            src="/src/assets/imr.jpg"
+            class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
+            alt=""
+          />
+          <div
+            class="img-overlay w-full h-full absolute top-0 z-10 after:w-full after:rounded after:h-full after:absolute after:top-0 after:left-0 after:opacity-0 after:bg-black"
+          >
+            <h2
+              class="img__title relative mb-8 my-16 text-4xl font-Oswald font-thin text-white text-center transition duration 0.3s ease-in-out tracking-wider"
+            >
+              SLAM of a Wheeled Robot
+            </h2>
+            <a
+              class="img__link relative block w-3/5 p-2.5 font-Montserrat font-medium text-white no-underline hover:bg-secondary text-center text-base border-solid border-2 border-white tracking-wider mx-auto transition duration 0.3 ease-in-out hover:text-gray-50"
+              href="#">View Case Study</a
+            >
+          </div>
+        </div>
+        <div class="img-wrapper relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80"
+            class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover object-center"
+            alt=""
+          />
+          <div
+            class="img-overlay w-full h-full absolute top-0 z-10 after:w-full after:rounded after:h-full after:absolute after:top-0 after:left-0 after:opacity-0 after:bg-black"
+          >
+            <h2
+              class="img__title relative mb-8 my-16 text-4xl font-Oswald font-thin text-white text-center transition duration 0.3s ease-in-out tracking-wider"
+            >
+              Project 4
+            </h2>
+            <a
+              class="img__link relative block w-3/5 p-2.5 font-Montserrat font-medium text-white no-underline hover:bg-secondary text-center text-base border-solid border-2 border-white tracking-wider mx-auto transition duration 0.3 ease-in-out hover:text-gray-50"
+              href="#">View Case Study</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Our About Section -->
+  <section class="bg-gray-800 pattern py-20" id="">
+    <div class="max-w-5xl px-6 mx-auto text-center">
+      <h2 class="text-2xl font-semibold text-white">CV</h2>
+      <p class="text-gray-500 mt-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper
+        nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim
+        cursus lorem ac. Orci maecenas praesent arcu eget orci est orci nullam.
+        Leo purus est pellentesque massa at tortor, est. Aliquet pulvinar a
+        mattis sagittis. Suspendisse porta id elementum, massa.
+      </p>
+    </div>
+  </section>
+</main>
+
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  .img-overlay:after {
+    content: "";
+    z-index: -10;
+    transition: all 0.3s ease;
+  }
+  .img__title {
+    top: -200px;
+  }
+  .img__link {
+    top: 200px;
+  }
+  .img-wrapper:hover .img__title {
+    top: 0;
+  }
+  .img-wrapper:hover .img__link {
+    top: 0;
+  }
+  .img-wrapper:hover .img-overlay:after {
+    opacity: 0.75;
+  }
+  /* Apply consistent padding/margin to align elements */
+  .container {
+    padding-left: 1.25rem; /* Match left padding of max-w-5xl */
+    padding-right: 1.25rem;
+  }
+
+  header .title-font {
+    margin-left: 0; /* Align to the edge of the container */
+  }
+</style>
