@@ -53,7 +53,7 @@
       <section id="projects">
         <h2>Projects</h2>
 
-        <!-- Example Project 1 -->
+        <!-- Marine Autonomy Challenge Project -->
         <div class="project">
           <div class="project-image">
             <img
@@ -72,15 +72,24 @@
               an area of hydrocarbon pollution, object detection and
               identification (ocean plastics).
             </p>
-            <div class="skills">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Machine Learning</span>
-              <span class="skill-tag">Data Science</span>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/MAChallengeV3"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Data Science</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Example Project 2 -->
+        <!-- AIS Data Plotter Web App Project -->
         <div class="project">
           <div class="project-image">
             <img
@@ -98,14 +107,23 @@
               datasets. The frontend is built with Svelte, MapLibre GL, and
               TypeScript, while the backend uses FastAPI.
             </p>
-            <div class="skills">
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Web Development</span>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/ais-plotter"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Web Development</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Example Project 3 -->
+        <!-- SLAM and Perception System Project -->
         <div class="project">
           <div class="project-image">
             <img src="/portfolio-app/assets/img/imr.jpg" alt="Project Image" />
@@ -124,15 +142,24 @@
               corners from the track as part of the perception system on the
               physical robotic platform. Developed a Graph SLAM algorithm
             </p>
-            <div class="skills">
-              <span class="skill-tag">ROS2</span>
-              <span class="skill-tag">Gazebo</span>
-              <span class="skill-tag">Machine Learning</span>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/slam-wheeled-robot"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">ROS2</span>
+                <span class="skill-tag">Gazebo</span>
+                <span class="skill-tag">Machine Learning</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Example Project 3 -->
+        <!-- Autonomous Vessel Project -->
         <div class="project">
           <div class="project-image">
             <img src="/portfolio-app/assets/img/mr.jpg" alt="Project Image" />
@@ -146,19 +173,27 @@
               actuators (motors using differential thrust) & sensors, including
               an IMU for heading control and ArUco markers for localisation.
             </p>
-            <div class="skills">
-              <span class="skill-tag">ROS2</span>
-              <span class="skill-tag">Gazebo</span>
-              <span class="skill-tag">Machine Learning</span>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/gnc-autonomous-vessel"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">ZeroROS</span>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- <section id="skills">
+        <!-- <section id="skills">
         <h2>Skills</h2>
         <p>List skills here...</p>
       </section> -->
+      </section>
     </main>
   </div>
 </div>
@@ -244,14 +279,14 @@
     background-color: #00000000;
   }
 
-  .profile-pic {
+  .sidebar .profile-pic {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     border: 3px solid #ffffff;
     object-fit: cover;
     margin-bottom: 15px;
-    align-self: center;
+    align-self: flex-start; /* Change from center to left-aligned for web version */
   }
 
   .sidebar h3 {
@@ -350,6 +385,7 @@
     flex: 1;
     max-width: 200px;
     margin-right: 20px;
+    position: relative;
   }
 
   .project-image img {
@@ -359,6 +395,52 @@
     object-fit: cover;
   }
 
+  .project-image {
+    position: relative;
+  }
+
+  .project-github-link {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .github-link {
+    color: #c7e2ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: color 0.3s ease;
+  }
+
+  .skills .github-link {
+    background-color: #1a1a1a00 !important;
+    /* padding: 0; */
+  }
+
+  .github-link:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .github-link i {
+    font-size: 1rem;
+    /* margin-right: 3px; */
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .project-details {
     flex: 2;
     text-align: left;
@@ -441,6 +523,7 @@
     .sidebar .profile-pic {
       width: 150px;
       height: 150px;
+      align-self: center;
     }
 
     .sidebar h3,
