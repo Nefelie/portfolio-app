@@ -25,7 +25,7 @@
       solve complex challenges and drive innovation in the maritime industry.
     </p>
     <a
-      href="portfolio-app/assets/docs/CV.pdf"
+      href="/portfolio-app/assets/docs/CV.pdf"
       download="Nefelie_Hemrich_CV.pdf"
       class="cv-download-button"
     >
@@ -84,6 +84,44 @@
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Machine Learning</span>
                 <span class="skill-tag">Data Science</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Shipping Network-->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="/portfolio-app/assets/img/ais-plotter.png"
+              alt="Project Image"
+            />
+          </div>
+          <div class="project-details">
+            <h3>
+              Global Shipping Network using AIS Data, Graph Theory and Machine
+              Learning
+            </h3>
+            <p>
+              An interactive web application for visualizing AIS (Automatic
+              Identification System) data for ships. This tool enables users to
+              dynamically upload and visualize ship position data from .pkl
+              files on a map, with customizable color options for different
+              datasets. The frontend is built with Svelte, MapLibre GL, and
+              TypeScript, while the backend uses FastAPI.
+            </p>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/ais-plotter"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Graph Theory</span>
+                <span class="skill-tag">Machine Learning</span>
               </div>
             </div>
           </div>
