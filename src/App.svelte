@@ -92,10 +92,7 @@
         <!-- Global Shipping Network-->
         <div class="project">
           <div class="project-image">
-            <img
-              src="/portfolio-app/assets/img/ais-plotter.png"
-              alt="Project Image"
-            />
+            <img src="/portfolio-app/assets/img/gsn3.png" alt="Project Image" />
           </div>
           <div class="project-details">
             <h3>
@@ -103,17 +100,17 @@
               Learning
             </h3>
             <p>
-              An interactive web application for visualizing AIS (Automatic
-              Identification System) data for ships. This tool enables users to
-              dynamically upload and visualize ship position data from .pkl
-              files on a map, with customizable color options for different
-              datasets. The frontend is built with Svelte, MapLibre GL, and
-              TypeScript, while the backend uses FastAPI.
+              Constructed a global shipping network using machine learning (KNN,
+              DBSCAN) and graph theory to model maritime routes and traffic
+              patterns. Designed and implemented a data processing pipeline to
+              clean AIS data and compress vessel trajectories. Analysed maritime
+              traffic variability and congestion to provide insights into global
+              shipping routes and supply chains.
             </p>
             <div class="skills-container">
               <div class="skills">
                 <a
-                  href="https://github.com/Nefelie/ais-plotter"
+                  href="https://github.com/Nefelie/AIS_GSN"
                   target="_blank"
                   class="skill-tag github-link"
                 >
