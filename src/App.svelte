@@ -478,6 +478,19 @@
     cursor: pointer;
   }
 
+  .skills .github-link {
+    background-color: #1a1a1a00 !important;
+    /* padding: 0; */
+  }
+  .github-link:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .github-link i {
+    font-size: 1rem;
+    /* margin-right: 3px; */
+  }
+
   @media screen and (min-width: 768px) and (max-width: 1000px) {
     #projects {
       align-items: center; /* Center align the projects section */
