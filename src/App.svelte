@@ -24,6 +24,13 @@
       Passionate about using data science, AI/machine learning, and robotics to
       solve complex challenges and drive innovation in the maritime industry.
     </p>
+    <a
+      href="portfolio-app/assets/docs/CV.pdf"
+      download="Nefelie_Hemrich_CV.pdf"
+      class="cv-download-button"
+    >
+      Download CV
+    </a>
     <div class="social-links">
       <!-- LinkedIn Link with Icon -->
       <a
@@ -124,18 +131,56 @@
             </div>
           </div>
         </div>
+
+        <!-- Example Project 3 -->
+        <div class="project">
+          <div class="project-image">
+            <img src="/portfolio-app/assets/img/mr.jpg" alt="Project Image" />
+          </div>
+          <div class="project-details">
+            <h3>Guidance, Control & Navigation of an Autonomous Vessel</h3>
+            <p>
+              Implemented PID control, artificial potential fields for path
+              planning, line of sight guidance for path following, and an
+              Extended Kalman Filter for probabilistic localisation. Worked with
+              actuators (motors using differential thrust) & sensors, including
+              an IMU for heading control and ArUco markers for localisation.
+            </p>
+            <div class="skills">
+              <span class="skill-tag">ROS2</span>
+              <span class="skill-tag">Gazebo</span>
+              <span class="skill-tag">Machine Learning</span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="skills">
+      <!-- <section id="skills">
         <h2>Skills</h2>
         <p>List skills here...</p>
-      </section>
+      </section> -->
     </main>
   </div>
 </div>
 
 <style>
   /* Navbar */
+  /* Global Reset and Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
   /* Navbar */
   .navbar {
     position: fixed;
@@ -146,8 +191,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 200px; /* 200px padding on both sides */
+    padding: 10px 200px;
     z-index: 1000;
+    transition: all 0.3s ease;
   }
 
   .navbar .left {
@@ -155,7 +201,7 @@
     font-weight: bold;
     height: 100%;
     display: flex;
-    align-items: center; /* Vertically center the "Portfolio" text */
+    align-items: center;
   }
 
   .navbar .right {
@@ -171,22 +217,17 @@
   }
 
   .navbar a:hover {
-    color: gray;
+    color: #c7e2ff;
   }
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-
+  /* Layout */
   .layout {
     display: flex;
-    margin-top: 60px; /* Space for navbar */
-    padding-left: 430px; /* Width of sidebar (250px) + margin (180px) */
+    margin-top: 60px;
+    padding-left: 430px;
   }
 
+  /* Sidebar */
   .sidebar {
     width: 250px;
     padding: 20px;
@@ -196,17 +237,11 @@
     align-items: left;
     margin-left: 180px;
     border-radius: 10px;
-    height: calc(100vh - 60px); /* Full height minus navbar */
-    position: fixed; /* Keep it fixed */
-    top: 60px; /* Keeps alignment with the navbar */
-    left: 0; /* Ensures it stays on the left side */
-  }
-
-  #app {
-    flex: 1;
-    padding: 20px;
-    padding-right: 200px; /* Maintain original right padding */
-    width: calc(100% - 250px); /* Adjust width to account for sidebar */
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: #00000000;
   }
 
   .profile-pic {
@@ -216,6 +251,7 @@
     border: 3px solid #ffffff;
     object-fit: cover;
     margin-bottom: 15px;
+    align-self: center;
   }
 
   .sidebar h3 {
@@ -229,6 +265,7 @@
     font-size: 0.9rem;
     text-align: left;
   }
+
   /* Social Links */
   .social-links {
     display: flex;
@@ -253,14 +290,34 @@
   }
 
   .social-link:hover {
-    color: gray;
+    color: #c7e2ff;
   }
 
   /* Main Content */
   #app {
     flex: 1;
     padding: 20px;
-    padding-right: 200px; /* Additional padding on the right */
+    padding-right: 200px;
+    width: calc(100% - 250px);
+  }
+
+  /* CV Download Button */
+  .cv-download-button {
+    background-color: #c7e2ff;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .cv-download-button:hover {
+    background-color: #a0d0ff;
   }
 
   /* Projects Section */
@@ -271,7 +328,8 @@
   #projects h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-align: left; /* Align "Projects" title to the left */
+    text-align: left;
+    color: #ffffff;
   }
 
   .project {
@@ -281,6 +339,11 @@
     border-radius: 8px;
     background-color: #494848;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .project:hover {
+    transform: scale(1.02);
   }
 
   .project-image {
@@ -298,20 +361,19 @@
 
   .project-details {
     flex: 2;
-    text-align: left; /* Ensure text within the project box is left-aligned */
+    text-align: left;
   }
 
   .project-details h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    text-align: left; /* Align project title to the left */
+    color: #ffffff;
   }
 
   .project-details p {
     font-size: 1rem;
     margin-bottom: 15px;
     line-height: 1.6;
-    text-align: left; /* Align project description to the left */
   }
 
   .skills {
@@ -322,19 +384,145 @@
 
   .skill-tag {
     background-color: #c7e2ff;
-    color: #333;
+    color: #000000;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.9rem;
     display: inline-block;
+    transition: background-color 0.3s ease;
   }
 
   .skill-tag:hover {
-    background-color: #bbb;
+    background-color: #a0d0ff;
     cursor: pointer;
   }
 
-  main {
+  /* Skills Section */
+  #skills {
     padding: 2rem;
+  }
+
+  #skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #c7e2ff;
+  }
+
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 10px 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar .right {
+      margin-top: 10px;
+      gap: 1rem;
+    }
+
+    .layout {
+      flex-direction: column;
+      margin-top: 120px;
+      padding-left: 0;
+    }
+
+    .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      padding: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .sidebar .profile-pic {
+      width: 150px;
+      height: 150px;
+    }
+
+    .sidebar h3,
+    .sidebar p {
+      text-align: center;
+    }
+
+    .social-links {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .social-link {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #app {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .cv-download-button {
+      width: auto;
+      padding: 10px 20px;
+    }
+
+    .project {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-image {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    .project-details {
+      width: 100%;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .navbar .left {
+      font-size: 1.3rem;
+    }
+
+    .navbar .right {
+      font-size: 1rem;
+    }
+
+    .project-details h3 {
+      font-size: 1.3rem;
+    }
+
+    .project-details p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Small Mobile Devices */
+  @media screen and (max-width: 480px) {
+    .social-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-link {
+      margin: 10px 0;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+    }
   }
 </style>
