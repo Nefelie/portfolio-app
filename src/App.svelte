@@ -390,9 +390,9 @@
 
   .project-image img {
     width: 100%;
-    height: auto;
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image scales proportionally and crops as needed to fit */
     border-radius: 8px;
-    object-fit: cover;
   }
 
   .project-image {
