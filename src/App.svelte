@@ -261,7 +261,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 200px;
+    padding: 10px 5%;
     z-index: 1000;
     transition: all 0.3s ease;
   }
@@ -290,25 +290,24 @@
     color: #c7e2ff;
   }
 
-  /* Layout */
   .layout {
     display: flex;
-    margin-top: 60px;
-    padding-left: 430px;
+    margin-top: 60px; /* Keeps content below navbar */
+    flex: 1;
   }
 
   /* Sidebar */
   .sidebar {
-    width: 250px;
-    padding: 20px;
+    width: clamp(200px, 20%, 350px);
+    padding: 20px 20px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin-left: 180px;
+    margin-left: 5%;
     border-radius: 10px;
     height: calc(100vh - 60px);
-    position: fixed;
+    position: fixed; /* Keeps it fixed while scrolling */
     top: 60px;
     left: 0;
     background-color: #00000000;
@@ -321,7 +320,7 @@
     border: 3px solid #ffffff;
     object-fit: cover;
     margin-bottom: 15px;
-    align-self: flex-start; /* Change from center to left-aligned for web version */
+    align-self: flex-start;
   }
 
   .sidebar h3 {
@@ -366,9 +365,9 @@
   /* Main Content */
   #app {
     flex: 1;
-    padding: 20px;
-    padding-right: 200px;
-    width: calc(100% - 250px);
+    margin-left: 25%; /* Matches the width of the sidebar */
+    padding: 20px; /* Adds spacing to the content */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
   }
 
   /* CV Download Button */
@@ -392,7 +391,10 @@
 
   /* Projects Section */
   #projects {
-    padding: 2rem;
+    padding: 2rem 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Align projects to the left */
   }
 
   #projects h2 {
@@ -410,6 +412,9 @@
     background-color: #494848;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    max-width: 1200px; /* Set maximum width for the project container */
+    width: 100%; /* Ensure it scales to smaller screen sizes */
+    align-items: center; /* Align items vertically in the center */
   }
 
   .project:hover {
@@ -425,57 +430,11 @@
 
   .project-image img {
     width: 100%;
-    height: 150px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image scales proportionally and crops as needed to fit */
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
   }
 
-  .project-image {
-    position: relative;
-  }
-
-  .project-github-link {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-  }
-
-  .github-link {
-    color: #c7e2ff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    transition: color 0.3s ease;
-  }
-
-  .skills .github-link {
-    background-color: #1a1a1a00 !important;
-    /* padding: 0; */
-  }
-
-  .github-link:hover {
-    color: #ffffff;
-    cursor: pointer;
-  }
-
-  .github-link i {
-    font-size: 1rem;
-    /* margin-right: 3px; */
-  }
-
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
   .project-details {
     flex: 2;
     text-align: left;
@@ -491,6 +450,11 @@
     font-size: 1rem;
     margin-bottom: 15px;
     line-height: 1.6;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .skills {
@@ -514,19 +478,28 @@
     cursor: pointer;
   }
 
-  /* Skills Section */
-  #skills {
-    padding: 2rem;
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    #projects {
+      align-items: center; /* Center align the projects section */
+      padding: 2rem 10px; /* Add some horizontal padding */
+    }
+    .project {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-image {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px; /* Add space between the image and the title */
+    }
+
+    .project-details {
+      text-align: center; /* Optional, center-align the details for better aesthetics */
+    }
   }
 
-  #skills h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-    color: #c7e2ff;
-  }
-
-  /* Mobile Responsive Styles */
+  /* Responsive Styles */
   @media screen and (max-width: 768px) {
     .navbar {
       padding: 10px 20px;
@@ -549,7 +522,7 @@
       position: static;
       width: 100%;
       height: auto;
-      margin-left: 0;
+      margin-left: 10px; /* Small margin for smaller screens */
       padding: 20px;
       align-items: center;
       text-align: center;
@@ -578,14 +551,20 @@
       align-items: center;
     }
 
-    #app {
-      width: 100%;
-      padding: 10px;
-    }
-
     .cv-download-button {
       width: auto;
       padding: 10px 20px;
+    }
+
+    #app {
+      margin-left: 0; /* Reset left margin */
+      width: 100%; /* Ensure it takes the full width */
+      padding: 0 1rem; /* Add slight padding for better aesthetics */
+    }
+
+    #projects {
+      align-items: center; /* Center align the projects section */
+      padding: 2rem 10px; /* Add some horizontal padding */
     }
 
     .project {
@@ -628,7 +607,6 @@
     }
   }
 
-  /* Small Mobile Devices */
   @media screen and (max-width: 480px) {
     .social-links {
       flex-direction: column;
