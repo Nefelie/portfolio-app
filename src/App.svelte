@@ -208,8 +208,13 @@
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span> <span class="skill-tag">Machine Learning</span>
                 <span class="skill-tag">Data Science</span>
               </div>
             </div>
@@ -243,8 +248,13 @@
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Graph Theory</span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span> <span class="skill-tag">Graph Theory</span>
                 <span class="skill-tag">Machine Learning</span>
               </div>
             </div>
@@ -278,8 +288,27 @@
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/TypeScript.svg"
+                    alt="TypeScript"
+                  />
+                  TypeScript
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Svelte.svg"
+                    alt="Svelte"
+                  />
+                  Svelte
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Vite.js.svg"
+                    alt="Vite"
+                  />
+                  Vite.js
+                </span>
               </div>
             </div>
           </div>
@@ -313,8 +342,20 @@
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <span class="skill-tag">ROS2</span>
-                <span class="skill-tag">Gazebo</span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
+                    alt="ROS2"
+                  />
+                  ROS
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Gazebo.svg"
+                    alt="Gazebo"
+                  />
+                  Gazebo</span
+                >
                 <span class="skill-tag">Machine Learning</span>
               </div>
             </div>
@@ -344,8 +385,13 @@
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">ZeroROS</span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span> <span class="skill-tag">ZeroROS</span>
               </div>
             </div>
           </div>
@@ -469,7 +515,7 @@
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    margin: 10px 0;
+    margin: 5px 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -598,20 +644,35 @@
   }
 
   .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
     background-color: #c7e2ff;
     color: #000000;
-    padding: 5px 10px;
-    border-radius: 20px;
     font-size: 0.9rem;
-    display: inline-block;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
   }
 
+  .skill-tag img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  /* Hover Effect */
   .skill-tag:hover {
     background-color: #a0d0ff;
     cursor: pointer;
   }
 
+  /* Skills Section in Projects */
+  .project .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
   .skills .github-link {
     background-color: #1a1a1a00 !important;
     /* padding: 0; */
@@ -644,7 +705,7 @@
   }
 
   .sidebar .tech-category h4 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #ffffff;
     margin-bottom: 5px;
     font-weight: normal; /* Remove bold styling */
@@ -662,7 +723,7 @@
     color: #000000;
     padding: 3px 8px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     gap: 3px;
