@@ -5,8 +5,8 @@
 <div class="navbar">
   <div class="left">Portfolio</div>
   <div class="right">
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
+    <!-- <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a> -->
   </div>
 </div>
 
@@ -45,6 +45,133 @@
         <i class="fa-brands fa-github"></i> GitHub
       </a>
     </div>
+
+    <section id="skills" class="sidebar-skills">
+      <h3>Skills</h3>
+      <div class="tech-categories">
+        <div class="tech-category">
+          <h4>Programming Languages</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Python.svg" alt="Python" />
+              Python</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Java.svg" alt="Java" />
+              Java</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/C++ (CPlusPlus).svg"
+                alt="C++"
+              /> C++</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/MATLAB.svg" alt="MATLAB" />
+              MATLAB</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Machine Learning</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Keras.svg" alt="Keras" /> Keras</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/PyTorch.svg"
+                alt="Pytorch"
+              /> Pytorch</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/scikit-learn.svg"
+                alt="Scikit-learn"
+              /> Scikit-learn</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/OpenCV.svg" alt="OpenCV" />
+              OpenCV</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Data Manipulation & Management</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Pandas.svg" alt="Pandas" />
+              Pandas</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/NumPy.svg" alt="Numpy" /> Numpy</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/SciPy.svg" alt="SciPy" /> Scipy</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/SQL.svg" alt="SQL" /> SQL</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Robotics</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
+                alt="ROS2"
+              /> ROS2</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Gazebo.svg" alt="Gazebo" />
+              Gazebo</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Web Development</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/TypeScript.svg"
+                alt="Typescript"
+              /> TypeScript</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Svelte.svg" alt="Svelte" />
+              Svelte</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/FastAPI.svg"
+                alt="FastAPI"
+              /> FastAPI</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Other</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Linux.svg" alt="Linux" /> Linux</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Git.svg" alt="Git" /> Git</span
+            >
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/Docker.svg" alt="Docker" />
+              Docker</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Main Content -->
@@ -223,11 +350,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <section id="skills">
-        <h2>Skills</h2>
-        <p>List skills here...</p>
-      </section> -->
       </section>
     </main>
   </div>
@@ -307,7 +429,7 @@
     margin-left: 5%;
     border-radius: 10px;
     height: calc(100vh - 60px);
-    position: fixed; /* Keeps it fixed while scrolling */
+    position: absolute; /* Keeps it fixed while scrolling */
     top: 60px;
     left: 0;
     background-color: #00000000;
@@ -346,7 +468,7 @@
   .social-link {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 10px 0;
     display: flex;
     align-items: center;
@@ -355,11 +477,24 @@
   }
 
   .social-link i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .social-link:hover {
     color: #c7e2ff;
+  }
+
+  /* Social Links Modifications */
+  .social-link span {
+    font-size: 0.8rem; /* Smaller text for LinkedIn and GitHub */
+    margin-left: 5px;
+  }
+
+  /* Skills Section Modifications */
+  .sidebar-skills h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Removed blue color */
   }
 
   /* Main Content */
@@ -370,12 +505,11 @@
     box-sizing: border-box; /* Ensures padding doesn't affect width */
   }
 
-  /* CV Download Button */
   .cv-download-button {
-    background-color: #c7e2ff;
-    color: #000000;
+    background-color: #4a4a4a; /* Changed color */
+    color: #ffffff;
     padding: 8px 15px;
-    border-radius: 25px;
+    border-radius: 4px; /* Less rounded corners */
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 15px;
@@ -386,7 +520,7 @@
   }
 
   .cv-download-button:hover {
-    background-color: #a0d0ff;
+    background-color: #5c5c5c; /* Slightly lighter on hover */
   }
 
   /* Projects Section */
@@ -489,6 +623,56 @@
   .github-link i {
     font-size: 1rem;
     /* margin-right: 3px; */
+  }
+
+  .sidebar-skills {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left; /* Ensure overall left alignment */
+  }
+
+  .sidebar-skills h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: left; /* Left align the main skills header */
+  }
+
+  .sidebar .tech-category {
+    margin-bottom: 10px;
+    text-align: left; /* Ensure tech category containers are left-aligned */
+  }
+
+  .sidebar .tech-category h4 {
+    font-size: 0.8rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: normal; /* Remove bold styling */
+  }
+
+  .sidebar .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start; /* Align skills to the start (left) */
+  }
+
+  .sidebar .skill-tag {
+    background-color: #c7e2ff;
+    color: #000000;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .sidebar .skill-tag img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    margin-right: 3px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1000px) {
