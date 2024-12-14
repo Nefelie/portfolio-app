@@ -314,6 +314,68 @@
           </div>
         </div>
 
+        <!-- Perception System Design for an Autonomous Vessel based on LiDAR
+              and Stero Cameras -->
+        <div class="project">
+          <div class="project-image">
+            <img src="/portfolio-app/assets/img/GDP7.png" alt="Project Image" />
+          </div>
+          <div class="project-details">
+            <h3>
+              Simulation and Software Development of Perception System for an
+              Autonomous Vessel (LiDAR and Stereo Cameras)
+            </h3>
+            <p>
+              Designed and simulated a perception system using stereo cameras
+              and LiDAR using Gazebo and ROS2 for autonomous navigation to
+              enhance collision avoidance capabilities in dynamic marine
+              environments. Developed object detection algorithms for vision and
+              point cloud data under varying weather conditions. Integrated the
+              perception system with obstacle avoidance sub-systems in a
+              multidisciplinary team.
+            </p>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/ais-plotter"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
+                    alt="ROS2"
+                  />
+                  ROS
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Gazebo.svg"
+                    alt="Gazebo"
+                  />
+                  Gazebo
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Linux.svg"
+                    alt="Linux"
+                  />
+                  Linux
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- SLAM and Perception System Project -->
         <div class="project">
           <div class="project-image">
@@ -344,10 +406,10 @@
                 </a>
                 <span class="skill-tag">
                   <img
-                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
+                    src="/portfolio-app/assets/icons/zeroros.png"
                     alt="ROS2"
                   />
-                  ROS
+                  ZeroROS
                 </span>
                 <span class="skill-tag">
                   <img
