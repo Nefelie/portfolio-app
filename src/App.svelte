@@ -214,8 +214,22 @@
                     alt="Python"
                   />
                   Python
-                </span> <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">Data Science</span>
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/OpenCV.svg"
+                    alt="OpenCV"
+                  />
+                  OpenCV
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/raspberrypi.png"
+                    alt="Raspberry Pi"
+                  />
+                  Raspberry Pi</span
+                >
               </div>
             </div>
           </div>
@@ -254,8 +268,21 @@
                     alt="Python"
                   />
                   Python
-                </span> <span class="skill-tag">Graph Theory</span>
-                <span class="skill-tag">Machine Learning</span>
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/NetworkX.png"
+                    alt="NetworkX"
+                  />
+                  NetworkX
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/scikit-learn.svg"
+                    alt="Scikit-learn"
+                  />
+                  scikit-learn
+                </span>
               </div>
             </div>
           </div>
@@ -308,6 +335,13 @@
                     alt="Vite"
                   />
                   Vite.js
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/FastAPI.svg"
+                    alt="FastAPI"
+                  />
+                  FastAPI
                 </span>
               </div>
             </div>
@@ -364,6 +398,15 @@
                   />
                   Python
                 </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/PyTorch.svg"
+                    alt="PyTorch"
+                  />
+                  PyTorch
+                </span>
+
                 <span class="skill-tag">
                   <img
                     src="/portfolio-app/assets/icons/Linux.svg"
@@ -411,14 +454,22 @@
                   />
                   ZeroROS
                 </span>
+
                 <span class="skill-tag">
                   <img
-                    src="/portfolio-app/assets/icons/Gazebo.svg"
-                    alt="Gazebo"
+                    src="/portfolio-app/assets/icons/webots.png"
+                    alt="webots"
                   />
-                  Gazebo</span
+                  Webots</span
                 >
-                <span class="skill-tag">Machine Learning</span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/scikit-learn.svg"
+                    alt="scikit-learn"
+                  />
+                  scikit-learn</span
+                >
               </div>
             </div>
           </div>
@@ -453,7 +504,22 @@
                     alt="Python"
                   />
                   Python
-                </span> <span class="skill-tag">ZeroROS</span>
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/zeroros.png"
+                    alt="ROS2"
+                  />
+                  ZeroROS
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/raspberrypi.png"
+                    alt="Raspberry Pi"
+                  />
+                  Raspberry Pi</span
+                >
               </div>
             </div>
           </div>
