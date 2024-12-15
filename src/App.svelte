@@ -50,7 +50,7 @@
       <h3>Skills</h3>
       <div class="tech-categories">
         <div class="tech-category">
-          <h4>Programming Languages</h4>
+          <h4>Programming</h4>
           <div class="skills">
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/Python.svg" alt="Python" />
@@ -70,12 +70,7 @@
               ><img src="/portfolio-app/assets/icons/MATLAB.svg" alt="MATLAB" />
               MATLAB</span
             >
-          </div>
-        </div>
 
-        <div class="tech-category">
-          <h4>Machine Learning</h4>
-          <div class="skills">
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/Keras.svg" alt="Keras" /> Keras</span
             >
@@ -95,12 +90,7 @@
               ><img src="/portfolio-app/assets/icons/OpenCV.svg" alt="OpenCV" />
               OpenCV</span
             >
-          </div>
-        </div>
 
-        <div class="tech-category">
-          <h4>Data Manipulation & Management</h4>
-          <div class="skills">
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/Pandas.svg" alt="Pandas" />
               Pandas</span
@@ -111,15 +101,23 @@
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/SciPy.svg" alt="SciPy" /> Scipy</span
             >
+
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/GeoPandas.svg"
+                alt="GeoPandas"
+              />
+              GeoPandas</span
+            >
+
+            <span class="skill-tag"
+              ><img src="/portfolio-app/assets/icons/netCDF.png" alt="netCDF" />
+              netCDF</span
+            >
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/SQL.svg" alt="SQL" /> SQL</span
             >
-          </div>
-        </div>
 
-        <div class="tech-category">
-          <h4>Robotics</h4>
-          <div class="skills">
             <span class="skill-tag"
               ><img
                 src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
@@ -130,12 +128,7 @@
               ><img src="/portfolio-app/assets/icons/Gazebo.svg" alt="Gazebo" />
               Gazebo</span
             >
-          </div>
-        </div>
 
-        <div class="tech-category">
-          <h4>Web Development</h4>
-          <div class="skills">
             <span class="skill-tag"
               ><img
                 src="/portfolio-app/assets/icons/TypeScript.svg"
@@ -152,12 +145,7 @@
                 alt="FastAPI"
               /> FastAPI</span
             >
-          </div>
-        </div>
 
-        <div class="tech-category">
-          <h4>Other</h4>
-          <div class="skills">
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/Linux.svg" alt="Linux" /> Linux</span
             >
@@ -167,6 +155,37 @@
             <span class="skill-tag"
               ><img src="/portfolio-app/assets/icons/Docker.svg" alt="Docker" />
               Docker</span
+            >
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Design</h4>
+          <div class="skills">
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/SOLIDWORKS.svg"
+                alt="SOLIDWORKS"
+              /> SOLIDWORKS</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/Rhinosceros3D.svg"
+                alt="Rhinosceros3D"
+              /> Rhinosceros3D</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/AutoCAD.png"
+                alt="AutoCAD"
+              /> AutoCAD</span
+            >
+            <span class="skill-tag"
+              ><img
+                src="/portfolio-app/assets/icons/MAXSURF.png"
+                alt="MAXSURF"
+              />
+              MAXSURF</span
             >
           </div>
         </div>
