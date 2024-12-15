@@ -210,13 +210,13 @@
           <div class="project-details">
             <h3>Marine Autonomy Challenge</h3>
             <p>
-              Leader of the University of Southampton team, developed software
-              for the autonomous operation of an uncrewed surface vehicle to map
-              and detect hydrocarbon pollution & ocean plastics. Developed a
-              range of software functionalities: path planning and following,
-              autonomous docking, obstacle avoidance, searching for and mapping
-              an area of hydrocarbon pollution, object detection and
-              identification (ocean plastics).
+              Leader of the University of Southampton team (finalists),
+              developed software for the autonomous operation of an uncrewed
+              surface vehicle to map and detect hydrocarbon pollution & ocean
+              plastics. Developed a range of software functionalities: path
+              planning and following, autonomous docking, obstacle avoidance,
+              searching for and mapping an area of hydrocarbon pollution, object
+              detection and identification (ocean plastics).
             </p>
             <div class="skills-container">
               <div class="skills">
@@ -307,6 +307,134 @@
           </div>
         </div>
 
+        <!-- Perception System Design for an Autonomous Vessel based on LiDAR
+              and Stero Cameras -->
+        <div class="project">
+          <div class="project-image">
+            <img src="/portfolio-app/assets/img/GDP7.png" alt="Project Image" />
+          </div>
+          <div class="project-details">
+            <h3>
+              Simulation and Software Development of Perception System for an
+              Autonomous Vessel (LiDAR and Stereo Cameras)
+            </h3>
+            <p>
+              Designed and simulated a perception system using stereo cameras
+              and LiDAR using Gazebo and ROS2 for autonomous navigation to
+              enhance collision avoidance capabilities in dynamic marine
+              environments. Developed object detection algorithms for vision and
+              point cloud data under varying weather conditions. Integrated the
+              perception system with obstacle avoidance sub-systems in a
+              multidisciplinary team.
+            </p>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/VRX-Camera-and-Lidar-Simulation"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
+                    alt="ROS2"
+                  />
+                  ROS
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Gazebo.svg"
+                    alt="Gazebo"
+                  />
+                  Gazebo
+                </span>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/PyTorch.svg"
+                    alt="PyTorch"
+                  />
+                  PyTorch
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Linux.svg"
+                    alt="Linux"
+                  />
+                  Linux
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Corrosion Map for Shipping -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="/portfolio-app/assets/img/GlobalCorrosion.png"
+              alt="Project Image"
+            />
+          </div>
+          <div class="project-details">
+            <h3>
+              Global Shipping Corrosion Map using an Artifical Neural Network
+            </h3>
+            <p>
+              Generated a global marine corrosion map for shipping using
+              AI/machine learning for integration into a digital twin for marine
+              structures, supporting improved ship design and maintenance
+              strategies to reduce costs. Implemented and trained an artificial
+              neural network to predict corrosion depth based on geospatial
+              ocean datasets.
+            </p>
+            <div class="skills-container">
+              <div class="skills">
+                <a
+                  href="https://github.com/Nefelie/global_corrosion_map"
+                  target="_blank"
+                  class="skill-tag github-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Python.svg"
+                    alt="Python"
+                  />
+                  Python
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/netCDF.png"
+                    alt="netCDF"
+                  />
+                  netCDF
+                </span>
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/Keras.svg"
+                    alt="Keras"
+                  />
+                  Keras
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- AIS Data Plotter Web App Project -->
         <div class="project">
           <div class="project-image">
@@ -367,77 +495,6 @@
           </div>
         </div>
 
-        <!-- Perception System Design for an Autonomous Vessel based on LiDAR
-              and Stero Cameras -->
-        <div class="project">
-          <div class="project-image">
-            <img src="/portfolio-app/assets/img/GDP7.png" alt="Project Image" />
-          </div>
-          <div class="project-details">
-            <h3>
-              Simulation and Software Development of Perception System for an
-              Autonomous Vessel (LiDAR and Stereo Cameras)
-            </h3>
-            <p>
-              Designed and simulated a perception system using stereo cameras
-              and LiDAR using Gazebo and ROS2 for autonomous navigation to
-              enhance collision avoidance capabilities in dynamic marine
-              environments. Developed object detection algorithms for vision and
-              point cloud data under varying weather conditions. Integrated the
-              perception system with obstacle avoidance sub-systems in a
-              multidisciplinary team.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/ais-plotter"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
-                    alt="ROS2"
-                  />
-                  ROS
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Gazebo.svg"
-                    alt="Gazebo"
-                  />
-                  Gazebo
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/PyTorch.svg"
-                    alt="PyTorch"
-                  />
-                  PyTorch
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Linux.svg"
-                    alt="Linux"
-                  />
-                  Linux
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <!-- SLAM and Perception System Project -->
         <div class="project">
           <div class="project-image">
@@ -488,6 +545,14 @@
                     alt="scikit-learn"
                   />
                   scikit-learn</span
+                >
+
+                <span class="skill-tag">
+                  <img
+                    src="/portfolio-app/assets/icons/raspberrypi.png"
+                    alt="Raspberry Pi"
+                  />
+                  Raspberry Pi</span
                 >
               </div>
             </div>
