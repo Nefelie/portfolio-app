@@ -643,7 +643,7 @@
     :root {
       --bg-color: #f5f5f5;
       --text-color: #1a1a1a;
-      --navbar-bg: #a8a8a8;
+      --navbar-bg: #ffffff;
       --navbar-text: #000000;
       --project-bg: #ffffff;
       --button-bg: #8f8f8f;
@@ -676,6 +676,7 @@
     padding: 10px 5%;
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .navbar .left {
