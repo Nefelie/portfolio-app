@@ -139,6 +139,10 @@
               ><img src="/portfolio-app/assets/icons/Svelte.svg" alt="Svelte" />
               Svelte</span
             >
+            <span class="skill-tag">
+              <img src="/portfolio-app/assets/icons/Vite.js.svg" alt="Vite" />
+              Vite.js
+            </span>
             <span class="skill-tag"
               ><img
                 src="/portfolio-app/assets/icons/FastAPI.svg"
@@ -614,7 +618,6 @@
 </div>
 
 <style>
-  /* Navbar */
   /* Global Reset and Base Styles */
   * {
     margin: 0;
@@ -622,12 +625,41 @@
     box-sizing: border-box;
   }
 
+  :root {
+    /* Dark mode colors */
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --navbar-bg: #000000;
+    --navbar-text: #ffffff;
+    --project-bg: #494848;
+    --button-bg: #4a4a4a;
+    --button-hover: #5c5c5c;
+    --skill-tag-bg: #c7e2ff;
+    --skill-tag-text: #000000;
+    --skill-tag-hover: #a0d0ff;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #1a1a1a;
+      --navbar-bg: #a8a8a8;
+      --navbar-text: #000000;
+      --project-bg: #ffffff;
+      --button-bg: #8f8f8f;
+      --button-hover: #4a4a4a;
+      --skill-tag-bg: #e3f2fd;
+      --skill-tag-text: #1a1a1a;
+      --skill-tag-hover: #bbdefb;
+    }
+  }
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     overflow-x: hidden;
   }
 
@@ -636,8 +668,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -672,7 +704,7 @@
 
   .layout {
     display: flex;
-    margin-top: 60px; /* Keeps content below navbar */
+    margin-top: 60px;
     flex: 1;
   }
 
@@ -680,17 +712,17 @@
   .sidebar {
     width: clamp(200px, 20%, 350px);
     padding: 20px 20px;
-    color: white;
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: left;
     margin-left: 5%;
     border-radius: 10px;
     height: calc(100vh - 60px);
-    position: absolute; /* Keeps it fixed while scrolling */
+    position: absolute;
     top: 60px;
     left: 0;
-    background-color: #00000000;
+    background-color: transparent;
   }
 
   .sidebar .profile-pic {
@@ -707,12 +739,14 @@
     margin: 10px 0 0;
     font-size: 1.5rem;
     text-align: left;
+    color: var(--text-color);
   }
 
   .sidebar p {
     margin: 10px 0 0;
     font-size: 0.9rem;
     text-align: left;
+    color: var(--text-color);
   }
 
   /* Social Links */
@@ -724,7 +758,7 @@
   }
 
   .social-link {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
     margin: 5px 0;
@@ -742,32 +776,17 @@
     color: #c7e2ff;
   }
 
-  /* Social Links Modifications */
   .social-link span {
-    font-size: 0.8rem; /* Smaller text for LinkedIn and GitHub */
+    font-size: 0.8rem;
     margin-left: 5px;
   }
 
-  /* Skills Section Modifications */
-  .sidebar-skills h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #ffffff; /* Removed blue color */
-  }
-
-  /* Main Content */
-  #app {
-    flex: 1;
-    margin-left: 25%; /* Matches the width of the sidebar */
-    padding: 20px; /* Adds spacing to the content */
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-  }
-
+  /* CV Download Button */
   .cv-download-button {
-    background-color: #4a4a4a; /* Changed color */
+    background-color: var(--button-bg);
     color: #ffffff;
     padding: 8px 15px;
-    border-radius: 4px; /* Less rounded corners */
+    border-radius: 4px;
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 15px;
@@ -778,7 +797,41 @@
   }
 
   .cv-download-button:hover {
-    background-color: #5c5c5c; /* Slightly lighter on hover */
+    background-color: var(--button-hover);
+  }
+
+  /* Skills Section */
+  .sidebar-skills {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .sidebar-skills h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    text-align: left;
+  }
+
+  .sidebar .tech-category {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .sidebar .tech-category h4 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: normal;
+  }
+
+  /* Main Content */
+  #app {
+    flex: 1;
+    margin-left: 25%;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   /* Projects Section */
@@ -786,14 +839,14 @@
     padding: 2rem 20px;
     display: flex;
     flex-direction: column;
-    align-items: left; /* Align projects to the left */
+    align-items: left;
   }
 
   #projects h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: left;
-    color: #ffffff;
+    color: var(--text-color);
   }
 
   .project {
@@ -801,12 +854,12 @@
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
-    background-color: #494848;
+    background-color: var(--project-bg);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    max-width: 1200px; /* Set maximum width for the project container */
-    width: 100%; /* Ensure it scales to smaller screen sizes */
-    align-items: center; /* Align items vertically in the center */
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
   }
 
   .project:hover {
@@ -835,15 +888,17 @@
   .project-details h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: var(--text-color);
   }
 
   .project-details p {
     font-size: 1rem;
     margin-bottom: 15px;
     line-height: 1.6;
+    color: var(--text-color);
   }
 
+  /* Skills Container and Tags */
   .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -860,8 +915,8 @@
     align-items: center;
     gap: 5px;
     padding: 5px 10px;
-    background-color: #c7e2ff;
-    color: #000000;
+    background-color: var(--skill-tag-bg);
+    color: var(--skill-tag-text);
     font-size: 0.9rem;
     border-radius: 20px;
     transition: background-color 0.3s ease;
@@ -873,103 +928,66 @@
     object-fit: contain;
   }
 
-  /* Hover Effect */
   .skill-tag:hover {
-    background-color: #a0d0ff;
+    background-color: var(--skill-tag-hover);
     cursor: pointer;
   }
 
-  /* Skills Section in Projects */
-  .project .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  /* GitHub Link in Projects */
   .skills .github-link {
-    background-color: #1a1a1a00 !important;
-    /* padding: 0; */
+    background-color: transparent !important;
+    color: var(--text-color);
   }
+
   .github-link:hover {
-    color: #ffffff;
+    color: var(--text-color);
+    opacity: 0.8;
     cursor: pointer;
   }
+
   .github-link i {
     font-size: 1rem;
-    /* margin-right: 3px; */
   }
 
-  .sidebar-skills {
-    margin-top: 20px;
-    width: 100%;
-    text-align: left; /* Ensure overall left alignment */
-  }
-
-  .sidebar-skills h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-align: left; /* Left align the main skills header */
-  }
-
-  .sidebar .tech-category {
-    margin-bottom: 10px;
-    text-align: left; /* Ensure tech category containers are left-aligned */
-  }
-
-  .sidebar .tech-category h4 {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-weight: normal; /* Remove bold styling */
-  }
-
+  /* Sidebar Skills Specific */
   .sidebar .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    justify-content: flex-start; /* Align skills to the start (left) */
+    justify-content: flex-start;
   }
 
   .sidebar .skill-tag {
-    background-color: #c7e2ff;
-    color: #000000;
     padding: 3px 8px;
-    border-radius: 20px;
     font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
   }
 
   .sidebar .skill-tag img {
     width: 12px;
     height: 12px;
-    object-fit: contain;
     margin-right: 3px;
   }
 
+  /* Media Queries */
   @media screen and (min-width: 768px) and (max-width: 1000px) {
     #projects {
-      align-items: center; /* Center align the projects section */
-      padding: 2rem 10px; /* Add some horizontal padding */
+      align-items: center;
+      padding: 2rem 10px;
     }
     .project {
       flex-direction: column;
       align-items: center;
     }
-
     .project-image {
       max-width: 100%;
       margin-right: 0;
-      margin-bottom: 15px; /* Add space between the image and the title */
+      margin-bottom: 15px;
     }
-
     .project-details {
-      text-align: center; /* Optional, center-align the details for better aesthetics */
+      text-align: center;
     }
   }
 
-  /* Responsive Styles */
   @media screen and (max-width: 768px) {
     .navbar {
       padding: 10px 20px;
@@ -992,7 +1010,7 @@
       position: static;
       width: 100%;
       height: auto;
-      margin-left: 10px; /* Small margin for smaller screens */
+      margin-left: 10px;
       padding: 20px;
       align-items: center;
       text-align: center;
@@ -1027,14 +1045,14 @@
     }
 
     #app {
-      margin-left: 0; /* Reset left margin */
-      width: 100%; /* Ensure it takes the full width */
-      padding: 0 1rem; /* Add slight padding for better aesthetics */
+      margin-left: 0;
+      width: 100%;
+      padding: 0 1rem;
     }
 
     #projects {
-      align-items: center; /* Center align the projects section */
-      padding: 2rem 10px; /* Add some horizontal padding */
+      align-items: center;
+      padding: 2rem 10px;
     }
 
     .project {
