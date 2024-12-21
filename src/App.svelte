@@ -1013,33 +1013,40 @@
       height: auto;
       margin-left: 10px;
       padding: 20px;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start; /* Changed from center to flex-start */
+      text-align: left; /* Changed from center to left */
     }
 
     .sidebar .profile-pic {
-      width: 150px;
-      height: 150px;
-      align-self: center;
+      width: 100px;
+      height: 100px;
+      align-self: flex-start; /* Changed from center to flex-start */
     }
 
     .sidebar h3,
     .sidebar p {
-      text-align: center;
+      text-align: left; /* Changed from center to left */
     }
 
     .social-links {
-      flex-direction: row;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 15px;
+      flex-direction: column;
+      align-items: flex-start; /* Changed from center to flex-start */
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .social-link {
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: flex-start; /* Changed from center to flex-start */
       align-items: center;
+      gap: 6px;
+      width: 120px;
+      margin: 0;
     }
 
+    .social-link i {
+      font-size: 1.1rem;
+    }
     .cv-download-button {
       width: auto;
       padding: 10px 20px;
