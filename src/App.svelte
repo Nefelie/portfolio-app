@@ -571,11 +571,13 @@
           <div class="project-details">
             <h3>Guidance, Control & Navigation of an Autonomous Vessel</h3>
             <p>
-              Implemented PID control, artificial potential fields for path
-              planning, line of sight guidance for path following, and an
-              Extended Kalman Filter for probabilistic localisation. Worked with
-              actuators (motors using differential thrust) & sensors, including
-              an IMU for heading control and ArUco markers for localisation.
+              Implemented PID control, artificial potential fields (path
+              planning), line of sight guidance (path following), and an
+              Extended Kalman Filter (probabilistic localisation/sensor fusion)
+              through python simulations. Worked with actuators (differential
+              thrust motors) & sensors, including an IMU (heading control) and
+              ArUco markers for localisation, to implement the software on the
+              vessel.
             </p>
             <div class="skills-container">
               <div class="skills">
