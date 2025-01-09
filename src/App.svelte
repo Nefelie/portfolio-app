@@ -204,112 +204,126 @@
         <h2>Projects</h2>
 
         <!-- Marine Autonomy Challenge Project -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="/portfolio-app/assets/img/MAChallenge.jpg"
-              alt="Project Image"
-            />
-          </div>
-          <div class="project-details">
-            <h3>Marine Autonomy Challenge</h3>
-            <p>
-              Leader of the University of Southampton team (finalists),
-              developed software for the autonomous operation of an uncrewed
-              surface vehicle to map and detect hydrocarbon pollution & ocean
-              plastics. Developed a range of software functionalities: path
-              planning and following, autonomous docking, obstacle avoidance,
-              searching for and mapping an area of hydrocarbon pollution, object
-              detection and identification (ocean plastics).
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/MAChallengeV3"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/OpenCV.svg"
-                    alt="OpenCV"
-                  />
-                  OpenCV
-                </span>
+        <a
+          href="https://github.com/Nefelie/MarineAutonomyChallenge/blob/main/README.md"
+          target="_blank"
+          style="text-decoration: none; color: inherit;"
+        >
+          <div class="project">
+            <div class="project-image">
+              <img
+                src="/portfolio-app/assets/img/MAChallenge.jpg"
+                alt="Project Image"
+              />
+            </div>
+            <div class="project-details">
+              <h3>Marine Autonomy Challenge</h3>
+              <p>
+                Leader of the University of Southampton team (finalists),
+                developed software for the autonomous operation of an uncrewed
+                surface vehicle to map and detect hydrocarbon pollution & ocean
+                plastics. Developed a range of software functionalities: path
+                planning and following, autonomous docking, obstacle avoidance,
+                searching for and mapping an area of hydrocarbon pollution,
+                object detection and identification (ocean plastics).
+              </p>
+              <div class="skills-container">
+                <div class="skills">
+                  <a
+                    href="https://github.com/Nefelie/MarineAutonomyChallenge"
+                    target="_blank"
+                    class="skill-tag github-link"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/Python.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/OpenCV.svg"
+                      alt="OpenCV"
+                    />
+                    OpenCV
+                  </span>
 
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/raspberrypi.png"
-                    alt="Raspberry Pi"
-                  />
-                  Raspberry Pi</span
-                >
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/raspberrypi.png"
+                      alt="Raspberry Pi"
+                    />
+                    Raspberry Pi</span
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
+        </a>
         <!-- Global Shipping Network-->
-        <div class="project">
-          <div class="project-image">
-            <img src="/portfolio-app/assets/img/gsn3.png" alt="Project Image" />
-          </div>
-          <div class="project-details">
-            <h3>
-              Global Shipping Network using AIS Data, Graph Theory and Machine
-              Learning
-            </h3>
-            <p>
-              Constructed a global shipping network using machine learning (KNN,
-              DBSCAN) and graph theory to model maritime routes and traffic
-              patterns. Designed and implemented a data processing pipeline to
-              clean AIS data and compress vessel trajectories. Analysed maritime
-              traffic variability and congestion to provide insights into global
-              shipping routes and supply chains.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/AIS_GSN"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/NetworkX.png"
-                    alt="NetworkX"
-                  />
-                  NetworkX
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/scikit-learn.svg"
-                    alt="Scikit-learn"
-                  />
-                  scikit-learn
-                </span>
+        <a
+          href="https://github.com/Nefelie/AIS_GSN/blob/main/README.md"
+          target="_blank"
+          style="text-decoration: none; color: inherit;"
+        >
+          <div class="project">
+            <div class="project-image">
+              <img
+                src="/portfolio-app/assets/img/gsn3.png"
+                alt="Project Image"
+              />
+            </div>
+            <div class="project-details">
+              <h3>
+                Global Shipping Network using AIS Data, Graph Theory and Machine
+                Learning
+              </h3>
+              <p>
+                Constructed a global shipping network using machine learning
+                (KNN, DBSCAN) and graph theory to model maritime routes and
+                traffic patterns. Designed and implemented a data processing
+                pipeline to clean AIS data and compress vessel trajectories.
+                Analysed maritime traffic variability and congestion to provide
+                insights into global shipping routes and supply chains.
+              </p>
+              <div class="skills-container">
+                <div class="skills">
+                  <a
+                    href="https://github.com/Nefelie/AIS_GSN"
+                    target="_blank"
+                    class="skill-tag github-link"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/Python.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/NetworkX.png"
+                      alt="NetworkX"
+                    />
+                    NetworkX
+                  </span>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/scikit-learn.svg"
+                      alt="Scikit-learn"
+                    />
+                    scikit-learn
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Perception System Design for an Autonomous Vessel based on LiDAR
               and Stero Cameras -->
@@ -383,61 +397,68 @@
         </div>
 
         <!-- Global Corrosion Map for Shipping -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="/portfolio-app/assets/img/GlobalCorrosion.png"
-              alt="Project Image"
-            />
-          </div>
-          <div class="project-details">
-            <h3>
-              Global Shipping Corrosion Map using an Artifical Neural Network
-            </h3>
-            <p>
-              Generated a global marine corrosion map for shipping using
-              AI/machine learning for integration into a digital twin for marine
-              structures, supporting improved ship design and maintenance
-              strategies to reduce costs. Implemented and trained an artificial
-              neural network to predict corrosion depth based on geospatial
-              ocean datasets.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/global_corrosion_map"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
+        <!-- Marine Autonomy Challenge Project -->
+        <a
+          href="https://github.com/Nefelie/global_corrosion_map/blob/main/README.md"
+          target="_blank"
+          style="text-decoration: none; color: inherit;"
+        >
+          <div class="project">
+            <div class="project-image">
+              <img
+                src="/portfolio-app/assets/img/GlobalCorrosion.png"
+                alt="Project Image"
+              />
+            </div>
+            <div class="project-details">
+              <h3>
+                Global Shipping Corrosion Map using an Artifical Neural Network
+              </h3>
+              <p>
+                Generated a global marine corrosion map for shipping using
+                AI/machine learning for integration into a digital twin for
+                marine structures, supporting improved ship design and
+                maintenance strategies to reduce costs. Implemented and trained
+                an artificial neural network to predict corrosion depth based on
+                geospatial ocean datasets.
+              </p>
+              <div class="skills-container">
+                <div class="skills">
+                  <a
+                    href="https://github.com/Nefelie/global_corrosion_map"
+                    target="_blank"
+                    class="skill-tag github-link"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/Python.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
 
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/netCDF.png"
-                    alt="netCDF"
-                  />
-                  netCDF
-                </span>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/netCDF.png"
+                      alt="netCDF"
+                    />
+                    netCDF
+                  </span>
 
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Keras.svg"
-                    alt="Keras"
-                  />
-                  Keras
-                </span>
+                  <span class="skill-tag">
+                    <img
+                      src="/portfolio-app/assets/icons/Keras.svg"
+                      alt="Keras"
+                    />
+                    Keras
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- AIS Data Plotter Web App Project -->
         <div class="project">
