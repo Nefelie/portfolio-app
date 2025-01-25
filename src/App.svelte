@@ -141,26 +141,40 @@
   ];
 
   const workExperience = [
-    {
-      title: "Research Assistant - AI/Machine Learning for Digital Twin in Shipping",
-      company: "University of Southampton, Marine & Maritime Institute",
-      period: "Jul 2023 - Aug 2023",
-      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
-      responsibilities: [
-        "Generated a global marine corrosion map for shipping using AI/machine learning for integration into a digital twin for marine structures, supporting improved ship design and maintenance strategies to reduce costs.",
-        "Implemented and trained an artificial neural network, employing k-fold cross validation to predict corrosion depth based on geospatial ocean datasets."
-      ]
-    },
-    {
-      title: "Research Assistant - Concept Design for LCO2 Carrier",
-      company: "University of Southampton, Marine & Maritime Institute",
-      period: "Jun 2022 - Sept 2022",
-      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
-      responsibilities: [
-        "Produced a technical report and concept design for Shell Shipping & Maritime on a net-zero LCO2 bulk carrier with a carbon capture system to support UK's decarbonisation targets and developed a 3D model and render in Rhinoceros 3D."
-      ]
-    }
-  ];
+  {
+    title: "Research Assistant - AI/Machine Learning for Digital Twin in Shipping",
+    company: "University of Southampton, Marine & Maritime Institute",
+    period: "Jul 2023 - Aug 2023",
+    logo: "/portfolio-app/public/assets/icons/UoS.jpg",
+    responsibilities: [
+      "Work with geospatial ocean datasets to tackle the multi-variate challenge of corrosion prediction for integration into a digital twin for marine structures.",
+      "Enhance the geospatial and temporal fidelity of existing research on corrosion rates for ships globally.",
+      "Assess how a map of global corrosion rates can factor in different climate change scenarios."
+    ],
+    achievements: [
+      "Implemented an artificial neural network and compared different architectures and model types to predict corrosion rates globally.",
+      "Developed a high resolution map predicting corrosion rates for vessels globally.",
+      "Identified biases in original dataset which resulted in poor model performance."
+    ]
+  },
+  {
+    title: "Research Assistant: Concept Design of LCO2 Carrier for Shell Shipping & Maritime",
+    company: "University of Southampton, Marine & Maritime Institute",
+    period: "Jun 2022 - Sept 2022",
+    logo: "/portfolio-app/public/assets/icons/UoS.jpg",
+    responsibilities: [
+      "Evaluate the transport efficiency of different vessel designs transporting novel future fuels including hydrogen and ammonia.",
+      "Develop a concept design for a net-zero LCO2 bulk carrier to support the UK’s decarbonisation targets."
+    ],
+    achievements: [
+      "Researched novel ways of obtaining a stability estimate for a new ship type to transport future fuels.",
+      "Produced a technical report for Shell Maritime & Shipping.",
+      "Developed a 3D model and render in Rhino and determined vessel hydrostatics.",
+      "Published an article in The Naval Architect magazine (Royal Institute of Naval Architects)."
+    ]
+  }
+];
+
 </script>
 
 <div class="navbar">
@@ -278,16 +292,23 @@
                 </div>
               </div>
               <p class="period">{exp.period}</p>
-
             {/if}
+            <h5>Responsibilities</h5>
             <ul>
               {#each exp.responsibilities as responsibility}
                 <li>{responsibility}</li>
               {/each}
             </ul>
+            <h5>Achievements</h5>
+            <ul>
+              {#each exp.achievements as achievement}
+                <li>{achievement}</li>
+              {/each}
+            </ul>
           </div>
         {/each}
       </section>
+      
       
 
 
@@ -343,15 +364,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
 
   :root {
     /* Dark mode colors */
     --bg-color: #1a1a1a;
     --text-color: #ffffff;
-    --navbar-bg: #000000;
+    --navbar-bg: #151515;
     --navbar-text: #ffffff;
-    --project-bg: #494848;
+    --project-bg: #323232;
     --button-bg: #4a4a4a;
     --button-hover: #5c5c5c;
     --skill-tag-bg: #c7e2ff;
@@ -560,14 +582,7 @@
     box-sizing: border-box;
   }
 
-  /* Projects Section */
-  #projects {
-    padding: 2rem 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
 
-  }
 
   #projects h2 {
     font-size: 2rem;
@@ -697,26 +712,34 @@
   }
 
 
-  #education, #experience {
-    padding: 2rem 20px;
+  #education, #experience, #projects {
+    padding: 1rem 20px; /* First value vertical padding*/
     display: flex;
     flex-direction: column;
     align-items: left;
     max-width: 1200px;
     width: 100%;
+    margin-bottom: 0px; /* Adjust this value to reduce or increase space between sections */
   }
 
-  #education h2, #experience h2 {
+
+
+  #education h2, #experience h2, #projects h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
     color: var(--text-color);
+  }
+
+
+  .education-section, .work-experience-section, .projects-section {
+    margin-bottom: 10px; /* Adjust this value to reduce or increase space between sections */
   }
 
   .experience-item {
     background-color: var(--project-bg);
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* space between individual experience items */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -785,7 +808,11 @@
     border-radius: 4px; /* Optional: Rounded corners */
   }
 
-
+  h5 {
+    font-size: 1.0em;  /* Slightly larger than the default font size */
+    font-weight: bold;
+    margin-top: 1rem;
+  }
 
 
   /* Media Queries */
