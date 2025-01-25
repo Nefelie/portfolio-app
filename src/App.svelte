@@ -197,11 +197,11 @@
       <section id="projects">
         <h2>Projects</h2>
         {#each projects as project}
-          <a 
-            href={project.githubLink} 
-            target="_blank" 
-            style="text-decoration: none; color: inherit;"
-          >
+        <a 
+        href={`${project.githubLink}/blob/main/README.md`} 
+        target="_blank" 
+        style="text-decoration: none; color: inherit;"
+      >
             <div class="project">
               <div class="project-image">
                 <img src={project.image} alt="Project Image" />
