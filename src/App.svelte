@@ -127,7 +127,7 @@
       degree: "MEng Maritime Engineering",
       institution: "University of Southampton, UK",
       period: "2020 - 2024",
-      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
+      logo: "/portfolio-app/assets/icons/UoS.jpg", 
       highlights: [
         "Grade: First Class Honours (average: 79%)", 
         'Best Performing Student prize (£1,000) awarded by <a href="https://www.shipwrights.co.uk/" target="_blank">UK Worshipful Company of Shipwrights</a>',
@@ -145,7 +145,7 @@
     title: "Research Assistant - AI/Machine Learning for Digital Twin in Shipping",
     company: "University of Southampton, Marine & Maritime Institute",
     period: "Jul 2023 - Aug 2023",
-    logo: "/portfolio-app/public/assets/icons/UoS.jpg",
+    logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
       "Work with geospatial ocean datasets to tackle the multi-variate challenge of corrosion prediction for integration into a digital twin for marine structures.",
       "Enhance the geospatial and temporal fidelity of existing research on corrosion rates for ships globally.",
@@ -161,7 +161,7 @@
     title: "Research Assistant: Concept Design of LCO2 Carrier for Shell Shipping & Maritime",
     company: "University of Southampton, Marine & Maritime Institute",
     period: "Jun 2022 - Sept 2022",
-    logo: "/portfolio-app/public/assets/icons/UoS.jpg",
+    logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
       "Evaluate the transport efficiency of different vessel designs transporting novel future fuels including hydrogen and ammonia.",
       "Develop a concept design for a net-zero LCO2 bulk carrier to support the UK’s decarbonisation targets."
