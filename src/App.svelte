@@ -119,12 +119,56 @@
     { icon: "/portfolio-app/assets/icons/AutoCAD.png", name: "AutoCAD" },
     { icon: "/portfolio-app/assets/icons/MAXSURF.png", name: "MAXSURF" }
   ];
+
+
+
+  const education = [
+    {
+      degree: "MEng Maritime Engineering",
+      institution: "University of Southampton, UK",
+      period: "2020 - 2024",
+      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
+      highlights: [
+        "Grade: First Class Honours (average: 79%)", 
+        'Best Performing Student prize (£1,000) awarded by <a href="https://www.shipwrights.co.uk/" target="_blank">UK Worshipful Company of Shipwrights</a>',
+        "Specialised in <b>Robotics</b>",
+        "<i>Relevant Modules</i>: Maritime Robotics, Intelligent Mobile Robotics, Machine Learning, Ship Manoeuvring and Control, System Design and Computing for Ships, Mechanics, Ship Resistance and Propulsion, Marine Hydrodynamics,  Ship Design and Economics, Project Risk Management, Maritime Safety: Risk, Environment and Law",
+        "<i>Master’s Group Design Project</i>: Perception System Design for an Autonomous Surface Vessel",
+        "<i>Bachelor’s Thesis</i>: “Constructing a Global Shipping Network Using AIS Data and Graph Theory to Enhance Maritime Situational Awareness” (see link)", 
+
+      ]
+    }
+  ];
+
+  const workExperience = [
+    {
+      title: "Research Assistant - AI/Machine Learning for Digital Twin in Shipping",
+      company: "University of Southampton, Marine & Maritime Institute",
+      period: "Jul 2023 - Aug 2023",
+      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
+      responsibilities: [
+        "Generated a global marine corrosion map for shipping using AI/machine learning for integration into a digital twin for marine structures, supporting improved ship design and maintenance strategies to reduce costs.",
+        "Implemented and trained an artificial neural network, employing k-fold cross validation to predict corrosion depth based on geospatial ocean datasets."
+      ]
+    },
+    {
+      title: "Research Assistant - Concept Design for LCO2 Carrier",
+      company: "University of Southampton, Marine & Maritime Institute",
+      period: "Jun 2022 - Sept 2022",
+      logo: "/portfolio-app/public/assets/icons/UoS.jpg", 
+      responsibilities: [
+        "Produced a technical report and concept design for Shell Shipping & Maritime on a net-zero LCO2 bulk carrier with a carbon capture system to support UK's decarbonisation targets and developed a 3D model and render in Rhinoceros 3D."
+      ]
+    }
+  ];
 </script>
 
 <div class="navbar">
   <div class="left">Portfolio</div>
   <div class="right">
-    <!-- Optional navigation links -->
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#experience" class="nav-link">Work Experience</a>
+    <a href="#projects" class="nav-link">Projects</a>
   </div>
 </div>
 
@@ -189,11 +233,64 @@
         </div>
       </div>
     </section>
+
+      
+
+
+
   </div>
 
   <!-- Main Content -->
   <div id="app">
     <main>
+
+      <section id="education">
+        <h2>Education</h2>
+        {#each education as edu}
+          <div class="experience-item">
+            <div class="edu-header">
+              <img src={edu.logo} alt="University Logo" class="edu-logo" />
+              <div class="edu-info">
+                <h3>{edu.degree}</h3>
+                <h4>{edu.institution}</h4>
+              </div>
+            </div>
+            <p class="period">{edu.period}</p>
+            <ul>
+              {#each edu.highlights as highlight}
+                <li>{@html highlight}</li>
+              {/each}
+            </ul>
+          </div>
+        {/each}
+      </section>
+
+      <section id="experience">
+        <h2>Work Experience</h2>
+        {#each workExperience as exp}
+          <div class="experience-item">
+            {#if exp.logo}
+              <div class="edu-header">
+                <img src={exp.logo} alt="Company Logo" class="company-logo" />
+                <div class="edu-info">
+                  <h3>{exp.title}</h3>
+                  <h4>{exp.company}</h4>
+                </div>
+              </div>
+              <p class="period">{exp.period}</p>
+
+            {/if}
+            <ul>
+              {#each exp.responsibilities as responsibility}
+                <li>{responsibility}</li>
+              {/each}
+            </ul>
+          </div>
+        {/each}
+      </section>
+      
+
+
       <section id="projects">
         <h2>Projects</h2>
         {#each projects as project}
@@ -231,9 +328,13 @@
           </a>
         {/each}
       </section>
+
+
+
     </main>
   </div>
 </div>
+
 
 
 <style>
@@ -282,45 +383,50 @@
     overflow-x: hidden;
   }
 
-  /* Navbar */
   .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--navbar-bg);
-    color: var(--navbar-text);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid #e0e0e0;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%; /* Adjust padding to match layout */
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e0e0e0;
+}
 
-  .navbar .left {
-    font-size: 1.5rem;
-    font-weight: bold;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
+/* For the left part of the navbar */
+.navbar .left {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 
-  .navbar .right {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.2rem;
-  }
+/* For the right part of the navbar */
+.navbar .right {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.2rem;
+  justify-content: flex-start; /* Align items to the left */
+  margin-left: 5%; /* Match the left padding of the projects section */
+}
 
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+/* For navbar links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-  .navbar a:hover {
-    color: #c7e2ff;
-  }
+.navbar a:hover {
+  color: #c7e2ff;
+}
+
 
   .layout {
     display: flex;
@@ -587,6 +693,98 @@
     height: 12px;
     margin-right: 3px;
   }
+
+
+  #education, #experience {
+    padding: 2rem 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  #education h2, #experience h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-color);
+  }
+
+  .experience-item {
+    background-color: var(--project-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+
+  .experience-item:hover {
+    transform: scale(1.02);
+  }
+
+  .experience-item h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+  }
+
+  .experience-item h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    opacity: 0.8;
+  }
+
+  .experience-item .period {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .experience-item ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    color: var(--text-color);
+  }
+
+  .experience-item li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+  }
+
+
+  .edu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the logo and text */
+  line-height: 1.2; /* Reduce spacing between lines */
+}
+
+.edu-logo {
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.company-logo {
+    width: 60px; /* Adjust the size */
+    height: auto;
+    vertical-align: middle; /* Aligns the logo vertically with text */
+    border-radius: 4px; /* Optional: Rounded corners */
+  }
+
+
+
 
   /* Media Queries */
   @media screen and (min-width: 768px) and (max-width: 1000px) {
