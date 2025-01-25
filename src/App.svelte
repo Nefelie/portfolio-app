@@ -377,7 +377,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.4;
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
@@ -418,7 +418,7 @@
 
 /* For navbar links */
 .navbar a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -566,6 +566,7 @@
     display: flex;
     flex-direction: column;
     align-items: left;
+
   }
 
   #projects h2 {
@@ -586,6 +587,7 @@
     max-width: 1200px;
     width: 100%;
     align-items: center;
+    font-weight: normal;
   }
 
   .project:hover {
@@ -620,7 +622,7 @@
   .project-details p {
     font-size: 1rem;
     margin-bottom: 15px;
-    line-height: 1.6;
+    line-height: 1.4;
     color: var(--text-color);
   }
 
@@ -726,13 +728,13 @@
   }
 
   .experience-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-color);
     margin-bottom: 5px;
   }
 
   .experience-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: var(--text-color);
     margin-bottom: 5px;
     opacity: 0.8;
@@ -753,7 +755,7 @@
 
   .experience-item li {
     margin-bottom: 5px;
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
 
@@ -765,7 +767,7 @@
 }
 
 .edu-logo {
-  width: 60px; /* Adjust size as needed */
+  width: 50px; /* Adjust size as needed */
   height: auto;
   border-radius: 4px; /* Optional: Rounded corners */
 }
@@ -777,7 +779,7 @@
 
 
 .company-logo {
-    width: 60px; /* Adjust the size */
+    width: 50px; /* Adjust the size */
     height: auto;
     vertical-align: middle; /* Aligns the logo vertically with text */
     border-radius: 4px; /* Optional: Rounded corners */
