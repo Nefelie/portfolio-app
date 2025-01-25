@@ -904,25 +904,40 @@
       padding: 0 1rem;
     }
 
+
+
+
+
+
+
+
+
     #projects {
-      align-items: center;
+      align-items: left;
       padding: 2rem 10px;
     }
 
     .project {
-      flex-direction: column;
-      align-items: center;
-    }
+    display: flex;  /* Use flexbox layout */
+    flex-direction: column;  /* Stack children vertically */
+    align-items: flex-start;  /* Align the items (including the image) to the left */
+  }
 
     .project-image {
       max-width: 100%;
-      margin-right: 0;
       margin-bottom: 15px;
     }
 
     .project-details {
       width: 100%;
     }
+
+
+
+
+ 
+
+    
 
     main {
       padding: 1rem;
@@ -947,6 +962,14 @@
     .project-details p {
       font-size: 0.9rem;
     }
+
+  .experience-item ul {
+    font-size: 0.9rem;  /* Matches the font size of project details */
+  }
+
+  .experience-item h5 {
+    font-size: 1.1rem;  /* Slightly larger than the list items */
+  }
   }
 
   @media screen and (max-width: 480px) {
