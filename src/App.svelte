@@ -1,12 +1,130 @@
 <script>
-  // Add any Svelte state or logic here if needed
+  import { onMount } from 'svelte';
+
+  // Project data centralized with FULL original descriptions
+  const projects = [
+    {
+      title: "Marine Autonomy Challenge",
+      description: "Leader of the University of Southampton team (finalists), developed software for the autonomous operation of an uncrewed surface vehicle to map and detect hydrocarbon pollution & ocean plastics. Developed a range of software functionalities: path planning and following, autonomous docking, obstacle avoidance, searching for and mapping an area of hydrocarbon pollution, object detection and identification (ocean plastics).",
+      image: "/portfolio-app/assets/img/MAChallenge.jpg",
+      githubLink: "https://github.com/Nefelie/MarineAutonomyChallenge",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+        { icon: "/portfolio-app/assets/icons/OpenCV.svg", name: "OpenCV" },
+        { icon: "/portfolio-app/assets/icons/raspberrypi.png", name: "Raspberry Pi" }
+      ]
+    },
+    {
+      title: "Global Shipping Network using AIS Data, Graph Theory and Machine Learning",
+      description: "Constructed a global shipping network using machine learning (KNN, DBSCAN) and graph theory to model maritime routes and traffic patterns. Designed and implemented a data processing pipeline to clean AIS data and compress vessel trajectories. Analysed maritime traffic variability and congestion to provide insights into global shipping routes and supply chains.",
+      image: "/portfolio-app/assets/img/gsn3.png",
+      githubLink: "https://github.com/Nefelie/AIS_GSN",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+        { icon: "/portfolio-app/assets/icons/NetworkX.png", name: "NetworkX" },
+        { icon: "/portfolio-app/assets/icons/scikit-learn.svg", name: "scikit-learn" }
+      ]
+    },
+    {
+      title: "Simulation and Software Development of Perception System for an Autonomous Vessel (LiDAR and Stereo Cameras)",
+      description: "Designed and simulated a perception system using stereo cameras and LiDAR using Gazebo and ROS2 for autonomous navigation to enhance collision avoidance capabilities in dynamic marine environments. Developed object detection algorithms for vision and point cloud data under varying weather conditions. Integrated the perception system with obstacle avoidance sub-systems in a multidisciplinary team.",
+      image: "/portfolio-app/assets/img/GDP7.png",
+      githubLink: "https://github.com/Nefelie/VRX-Camera-and-Lidar-Simulation",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/Robot Operating System (ROS).svg", name: "ROS" },
+        { icon: "/portfolio-app/assets/icons/Gazebo.svg", name: "Gazebo" },
+        { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+        { icon: "/portfolio-app/assets/icons/PyTorch.svg", name: "PyTorch" },
+        { icon: "/portfolio-app/assets/icons/Linux.svg", name: "Linux" }
+      ]
+    },
+    {
+      title: "Global Shipping Corrosion Map using an Artifical Neural Network",
+      description: "Generated a global marine corrosion map for shipping using AI/machine learning for integration into a digital twin for marine structures, supporting improved ship design and maintenance strategies to reduce costs. Implemented and trained an artificial neural network to predict corrosion depth based on geospatial ocean datasets.",
+      image: "/portfolio-app/assets/img/GlobalCorrosion.png",
+      githubLink: "https://github.com/Nefelie/global_corrosion_map",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+        { icon: "/portfolio-app/assets/icons/netCDF.png", name: "netCDF" },
+        { icon: "/portfolio-app/assets/icons/Keras.svg", name: "Keras" }
+      ]
+    },
+    {
+      title: "AIS Data Plotter Web App",
+      description: "An interactive web application for visualizing AIS (Automatic Identification System) data for ships. This tool enables users to dynamically upload and visualize ship position data from .pkl files on a map, with customizable color options for different datasets. The frontend is built with Svelte, MapLibre GL, and TypeScript, while the backend uses FastAPI.",
+      image: "/portfolio-app/assets/img/ais-plotter.png",
+      githubLink: "https://github.com/Nefelie/ais-plotter",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/TypeScript.svg", name: "TypeScript" },
+        { icon: "/portfolio-app/assets/icons/Svelte.svg", name: "Svelte" },
+        { icon: "/portfolio-app/assets/icons/Vite.js.svg", name: "Vite.js" },
+        { icon: "/portfolio-app/assets/icons/FastAPI.svg", name: "FastAPI" }
+      ]
+    },
+    {
+      title: "SLAM and Perception System Development for an Intelligent Mobile Robot",
+      description: "Worked with ZeroROS robot middleware and Webots simulation environment to develop software for the robot. Implemented state-space control, an EKF & particle filter for probabilistic localisation and interpreted live LiDAR sensor data using a Gaussian Process Classifier and Regressor to detect walls and corners from the track as part of the perception system on the physical robotic platform. Developed a Graph SLAM algorithm.",
+      image: "/portfolio-app/assets/img/imr.jpg",
+      githubLink: "https://github.com/Nefelie/slam-wheeled-robot",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/zeroros.png", name: "ZeroROS" },
+        { icon: "/portfolio-app/assets/icons/webots.png", name: "Webots" },
+        { icon: "/portfolio-app/assets/icons/scikit-learn.svg", name: "scikit-learn" },
+        { icon: "/portfolio-app/assets/icons/raspberrypi.png", name: "Raspberry Pi" }
+      ]
+    },
+    {
+      title: "Guidance, Control & Navigation of an Autonomous Vessel",
+      description: "Implemented PID control, artificial potential fields (path planning), line of sight guidance (path following), and an Extended Kalman Filter (probabilistic localisation/sensor fusion) through python simulations. Worked with actuators (differential thrust motors) & sensors, including an IMU (heading control) and ArUco markers for localisation, to implement the software on the vessel.",
+      image: "/portfolio-app/assets/img/mr.jpg",
+      githubLink: "https://github.com/Nefelie/gnc-autonomous-vessel",
+      skills: [
+        { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+        { icon: "/portfolio-app/assets/icons/zeroros.png", name: "ZeroROS" },
+        { icon: "/portfolio-app/assets/icons/raspberrypi.png", name: "Raspberry Pi" }
+      ]
+    }
+  ];
+
+  // Full skills data matching original
+  const programmingSkills = [
+    { icon: "/portfolio-app/assets/icons/Python.svg", name: "Python" },
+    { icon: "/portfolio-app/assets/icons/Java.svg", name: "Java" },
+    { icon: "/portfolio-app/assets/icons/C++ (CPlusPlus).svg", name: "C++" },
+    { icon: "/portfolio-app/assets/icons/MATLAB.svg", name: "MATLAB" },
+    { icon: "/portfolio-app/assets/icons/Keras.svg", name: "Keras" },
+    { icon: "/portfolio-app/assets/icons/PyTorch.svg", name: "Pytorch" },
+    { icon: "/portfolio-app/assets/icons/scikit-learn.svg", name: "Scikit-learn" },
+    { icon: "/portfolio-app/assets/icons/OpenCV.svg", name: "OpenCV" },
+    { icon: "/portfolio-app/assets/icons/Pandas.svg", name: "Pandas" },
+    { icon: "/portfolio-app/assets/icons/NumPy.svg", name: "NumPy" },
+    { icon: "/portfolio-app/assets/icons/SciPy.svg", name: "Scipy" },
+    { icon: "/portfolio-app/assets/icons/GeoPandas.svg", name: "GeoPandas" },
+    { icon: "/portfolio-app/assets/icons/netCDF.png", name: "netCDF" },
+    { icon: "/portfolio-app/assets/icons/SQL.svg", name: "SQL" },
+    { icon: "/portfolio-app/assets/icons/Robot Operating System (ROS).svg", name: "ROS2" },
+    { icon: "/portfolio-app/assets/icons/Gazebo.svg", name: "Gazebo" },
+    { icon: "/portfolio-app/assets/icons/TypeScript.svg", name: "TypeScript" },
+    { icon: "/portfolio-app/assets/icons/Svelte.svg", name: "Svelte" },
+    { icon: "/portfolio-app/assets/icons/Vite.js.svg", name: "Vite.js" },
+    { icon: "/portfolio-app/assets/icons/FastAPI.svg", name: "FastAPI" },
+    { icon: "/portfolio-app/assets/icons/Linux.svg", name: "Linux" },
+    { icon: "/portfolio-app/assets/icons/Git.svg", name: "Git" },
+    { icon: "/portfolio-app/assets/icons/Docker.svg", name: "Docker" }
+  ];
+
+  const designSkills = [
+    { icon: "/portfolio-app/assets/icons/SOLIDWORKS.svg", name: "SOLIDWORKS" },
+    { icon: "/portfolio-app/assets/icons/Rhinosceros3D.svg", name: "Rhinosceros3D" },
+    { icon: "/portfolio-app/assets/icons/AutoCAD.png", name: "AutoCAD" },
+    { icon: "/portfolio-app/assets/icons/MAXSURF.png", name: "MAXSURF" }
+  ];
 </script>
 
 <div class="navbar">
   <div class="left">Portfolio</div>
   <div class="right">
-    <!-- <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a> -->
+    <!-- Optional navigation links -->
   </div>
 </div>
 
@@ -15,7 +133,7 @@
   <div class="sidebar">
     <img
       src="/portfolio-app/assets/img/profilepic.jpg"
-      alt=""
+      alt="Profile"
       class="profile-pic"
     />
     <h3>Nefelie Hemrich</h3>
@@ -32,7 +150,6 @@
       Download CV
     </a>
     <div class="social-links">
-      <!-- LinkedIn Link with Icon -->
       <a
         href="https://www.linkedin.com/in/nefeliehemrich/"
         target="_blank"
@@ -40,7 +157,6 @@
       >
         <i class="fa-brands fa-linkedin"></i> LinkedIn
       </a>
-      <!-- GitHub Link with Icon -->
       <a href="https://github.com/Nefelie" target="_blank" class="social-link">
         <i class="fa-brands fa-github"></i> GitHub
       </a>
@@ -52,145 +168,23 @@
         <div class="tech-category">
           <h4>Programming</h4>
           <div class="skills">
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Python.svg" alt="Python" />
-              Python</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Java.svg" alt="Java" />
-              Java</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/C++ (CPlusPlus).svg"
-                alt="C++"
-              /> C++</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/MATLAB.svg" alt="MATLAB" />
-              MATLAB</span
-            >
-
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Keras.svg" alt="Keras" /> Keras</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/PyTorch.svg"
-                alt="Pytorch"
-              /> Pytorch</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/scikit-learn.svg"
-                alt="Scikit-learn"
-              /> Scikit-learn</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/OpenCV.svg" alt="OpenCV" />
-              OpenCV</span
-            >
-
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Pandas.svg" alt="Pandas" />
-              Pandas</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/NumPy.svg" alt="Numpy" /> Numpy</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/SciPy.svg" alt="SciPy" /> Scipy</span
-            >
-
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/GeoPandas.svg"
-                alt="GeoPandas"
-              />
-              GeoPandas</span
-            >
-
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/netCDF.png" alt="netCDF" />
-              netCDF</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/SQL.svg" alt="SQL" /> SQL</span
-            >
-
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
-                alt="ROS2"
-              /> ROS2</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Gazebo.svg" alt="Gazebo" />
-              Gazebo</span
-            >
-
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/TypeScript.svg"
-                alt="Typescript"
-              /> TypeScript</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Svelte.svg" alt="Svelte" />
-              Svelte</span
-            >
-            <span class="skill-tag">
-              <img src="/portfolio-app/assets/icons/Vite.js.svg" alt="Vite" />
-              Vite.js
-            </span>
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/FastAPI.svg"
-                alt="FastAPI"
-              /> FastAPI</span
-            >
-
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Linux.svg" alt="Linux" /> Linux</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Git.svg" alt="Git" /> Git</span
-            >
-            <span class="skill-tag"
-              ><img src="/portfolio-app/assets/icons/Docker.svg" alt="Docker" />
-              Docker</span
-            >
+            {#each programmingSkills as skill}
+              <span class="skill-tag">
+                <img src={skill.icon} alt={skill.name} />
+                {skill.name}
+              </span>
+            {/each}
           </div>
         </div>
-
         <div class="tech-category">
           <h4>Design</h4>
           <div class="skills">
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/SOLIDWORKS.svg"
-                alt="SOLIDWORKS"
-              /> SOLIDWORKS</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/Rhinosceros3D.svg"
-                alt="Rhinosceros3D"
-              /> Rhinosceros3D</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/AutoCAD.png"
-                alt="AutoCAD"
-              /> AutoCAD</span
-            >
-            <span class="skill-tag"
-              ><img
-                src="/portfolio-app/assets/icons/MAXSURF.png"
-                alt="MAXSURF"
-              />
-              MAXSURF</span
-            >
+            {#each designSkills as skill}
+              <span class="skill-tag">
+                <img src={skill.icon} alt={skill.name} />
+                {skill.name}
+              </span>
+            {/each}
           </div>
         </div>
       </div>
@@ -202,443 +196,45 @@
     <main>
       <section id="projects">
         <h2>Projects</h2>
-
-        <!-- Marine Autonomy Challenge Project -->
-        <a
-          href="https://github.com/Nefelie/MarineAutonomyChallenge/blob/main/README.md"
-          target="_blank"
-          style="text-decoration: none; color: inherit;"
-        >
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="/portfolio-app/assets/img/MAChallenge.jpg"
-                alt="Project Image"
-              />
-            </div>
-            <div class="project-details">
-              <h3>Marine Autonomy Challenge</h3>
-              <p>
-                Leader of the University of Southampton team (finalists),
-                developed software for the autonomous operation of an uncrewed
-                surface vehicle to map and detect hydrocarbon pollution & ocean
-                plastics. Developed a range of software functionalities: path
-                planning and following, autonomous docking, obstacle avoidance,
-                searching for and mapping an area of hydrocarbon pollution,
-                object detection and identification (ocean plastics).
-              </p>
-              <div class="skills-container">
-                <div class="skills">
-                  <a
-                    href="https://github.com/Nefelie/MarineAutonomyChallenge"
-                    target="_blank"
-                    class="skill-tag github-link"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/Python.svg"
-                      alt="Python"
-                    />
-                    Python
-                  </span>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/OpenCV.svg"
-                      alt="OpenCV"
-                    />
-                    OpenCV
-                  </span>
-
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/raspberrypi.png"
-                      alt="Raspberry Pi"
-                    />
-                    Raspberry Pi</span
-                  >
+        {#each projects as project}
+          <a 
+            href={project.githubLink} 
+            target="_blank" 
+            style="text-decoration: none; color: inherit;"
+          >
+            <div class="project">
+              <div class="project-image">
+                <img src={project.image} alt="Project Image" />
+              </div>
+              <div class="project-details">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div class="skills-container">
+                  <div class="skills">
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      class="skill-tag github-link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    {#each project.skills as skill}
+                      <span class="skill-tag">
+                        <img src={skill.icon} alt={skill.name} />
+                        {skill.name}
+                      </span>
+                    {/each}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        <!-- Global Shipping Network-->
-        <a
-          href="https://github.com/Nefelie/AIS_GSN/blob/main/README.md"
-          target="_blank"
-          style="text-decoration: none; color: inherit;"
-        >
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="/portfolio-app/assets/img/gsn3.png"
-                alt="Project Image"
-              />
-            </div>
-            <div class="project-details">
-              <h3>
-                Global Shipping Network using AIS Data, Graph Theory and Machine
-                Learning
-              </h3>
-              <p>
-                Constructed a global shipping network using machine learning
-                (KNN, DBSCAN) and graph theory to model maritime routes and
-                traffic patterns. Designed and implemented a data processing
-                pipeline to clean AIS data and compress vessel trajectories.
-                Analysed maritime traffic variability and congestion to provide
-                insights into global shipping routes and supply chains.
-              </p>
-              <div class="skills-container">
-                <div class="skills">
-                  <a
-                    href="https://github.com/Nefelie/AIS_GSN"
-                    target="_blank"
-                    class="skill-tag github-link"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/Python.svg"
-                      alt="Python"
-                    />
-                    Python
-                  </span>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/NetworkX.png"
-                      alt="NetworkX"
-                    />
-                    NetworkX
-                  </span>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/scikit-learn.svg"
-                      alt="Scikit-learn"
-                    />
-                    scikit-learn
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Perception System Design for an Autonomous Vessel based on LiDAR
-              and Stero Cameras -->
-        <div class="project">
-          <div class="project-image">
-            <img src="/portfolio-app/assets/img/GDP7.png" alt="Project Image" />
-          </div>
-          <div class="project-details">
-            <h3>
-              Simulation and Software Development of Perception System for an
-              Autonomous Vessel (LiDAR and Stereo Cameras)
-            </h3>
-            <p>
-              Designed and simulated a perception system using stereo cameras
-              and LiDAR using Gazebo and ROS2 for autonomous navigation to
-              enhance collision avoidance capabilities in dynamic marine
-              environments. Developed object detection algorithms for vision and
-              point cloud data under varying weather conditions. Integrated the
-              perception system with obstacle avoidance sub-systems in a
-              multidisciplinary team.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/VRX-Camera-and-Lidar-Simulation"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Robot Operating System (ROS).svg"
-                    alt="ROS2"
-                  />
-                  ROS
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Gazebo.svg"
-                    alt="Gazebo"
-                  />
-                  Gazebo
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/PyTorch.svg"
-                    alt="PyTorch"
-                  />
-                  PyTorch
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Linux.svg"
-                    alt="Linux"
-                  />
-                  Linux
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Global Corrosion Map for Shipping -->
-        <!-- Marine Autonomy Challenge Project -->
-        <a
-          href="https://github.com/Nefelie/global_corrosion_map/blob/main/README.md"
-          target="_blank"
-          style="text-decoration: none; color: inherit;"
-        >
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="/portfolio-app/assets/img/GlobalCorrosion.png"
-                alt="Project Image"
-              />
-            </div>
-            <div class="project-details">
-              <h3>
-                Global Shipping Corrosion Map using an Artifical Neural Network
-              </h3>
-              <p>
-                Generated a global marine corrosion map for shipping using
-                AI/machine learning for integration into a digital twin for
-                marine structures, supporting improved ship design and
-                maintenance strategies to reduce costs. Implemented and trained
-                an artificial neural network to predict corrosion depth based on
-                geospatial ocean datasets.
-              </p>
-              <div class="skills-container">
-                <div class="skills">
-                  <a
-                    href="https://github.com/Nefelie/global_corrosion_map"
-                    target="_blank"
-                    class="skill-tag github-link"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/Python.svg"
-                      alt="Python"
-                    />
-                    Python
-                  </span>
-
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/netCDF.png"
-                      alt="netCDF"
-                    />
-                    netCDF
-                  </span>
-
-                  <span class="skill-tag">
-                    <img
-                      src="/portfolio-app/assets/icons/Keras.svg"
-                      alt="Keras"
-                    />
-                    Keras
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- AIS Data Plotter Web App Project -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="/portfolio-app/assets/img/ais-plotter.png"
-              alt="Project Image"
-            />
-          </div>
-          <div class="project-details">
-            <h3>AIS Data Plotter Web App</h3>
-            <p>
-              An interactive web application for visualizing AIS (Automatic
-              Identification System) data for ships. This tool enables users to
-              dynamically upload and visualize ship position data from .pkl
-              files on a map, with customizable color options for different
-              datasets. The frontend is built with Svelte, MapLibre GL, and
-              TypeScript, while the backend uses FastAPI.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/ais-plotter"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/TypeScript.svg"
-                    alt="TypeScript"
-                  />
-                  TypeScript
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Svelte.svg"
-                    alt="Svelte"
-                  />
-                  Svelte
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Vite.js.svg"
-                    alt="Vite"
-                  />
-                  Vite.js
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/FastAPI.svg"
-                    alt="FastAPI"
-                  />
-                  FastAPI
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SLAM and Perception System Project -->
-        <div class="project">
-          <div class="project-image">
-            <img src="/portfolio-app/assets/img/imr.jpg" alt="Project Image" />
-          </div>
-          <div class="project-details">
-            <h3>
-              SLAM and Perception System Development for an Intelligent Mobile
-              Robot
-            </h3>
-            <p>
-              Worked with ZeroROS robot middleware and Webots simulation
-              environment to develop software for the robot. Implemented
-              state-space control, an EKF & particle filter for probabilistic
-              localisation and interpreted live LiDAR sensor data using a
-              Gaussian Process Classifier and Regressor to detect walls and
-              corners from the track as part of the perception system on the
-              physical robotic platform. Developed a Graph SLAM algorithm
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/slam-wheeled-robot"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/zeroros.png"
-                    alt="ROS2"
-                  />
-                  ZeroROS
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/webots.png"
-                    alt="webots"
-                  />
-                  Webots</span
-                >
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/scikit-learn.svg"
-                    alt="scikit-learn"
-                  />
-                  scikit-learn</span
-                >
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/raspberrypi.png"
-                    alt="Raspberry Pi"
-                  />
-                  Raspberry Pi</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Autonomous Vessel Project -->
-        <div class="project">
-          <div class="project-image">
-            <img src="/portfolio-app/assets/img/mr.jpg" alt="Project Image" />
-          </div>
-          <div class="project-details">
-            <h3>Guidance, Control & Navigation of an Autonomous Vessel</h3>
-            <p>
-              Implemented PID control, artificial potential fields (path
-              planning), line of sight guidance (path following), and an
-              Extended Kalman Filter (probabilistic localisation/sensor fusion)
-              through python simulations. Worked with actuators (differential
-              thrust motors) & sensors, including an IMU (heading control) and
-              ArUco markers for localisation, to implement the software on the
-              vessel.
-            </p>
-            <div class="skills-container">
-              <div class="skills">
-                <a
-                  href="https://github.com/Nefelie/gnc-autonomous-vessel"
-                  target="_blank"
-                  class="skill-tag github-link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/Python.svg"
-                    alt="Python"
-                  />
-                  Python
-                </span>
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/zeroros.png"
-                    alt="ROS2"
-                  />
-                  ZeroROS
-                </span>
-
-                <span class="skill-tag">
-                  <img
-                    src="/portfolio-app/assets/icons/raspberrypi.png"
-                    alt="Raspberry Pi"
-                  />
-                  Raspberry Pi</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+          </a>
+        {/each}
       </section>
     </main>
   </div>
 </div>
+
 
 <style>
   /* Global Reset and Base Styles */
