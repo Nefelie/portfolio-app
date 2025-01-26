@@ -5,6 +5,7 @@
   const projects = [
     {
       title: "Marine Autonomy Challenge",
+      type: "robotics",
       description: "Leader of the University of Southampton team (finalists), developed software for the autonomous operation of an uncrewed surface vehicle to map and detect hydrocarbon pollution & ocean plastics. Developed a range of software functionalities: path planning and following, autonomous docking, obstacle avoidance, searching for and mapping an area of hydrocarbon pollution, object detection and identification (ocean plastics).",
       image: "/portfolio-app/assets/img/MAChallenge.jpg",
       githubLink: "https://github.com/Nefelie/MarineAutonomyChallenge",
@@ -16,6 +17,7 @@
     },
     {
       title: "Global Shipping Network using AIS Data, Graph Theory and Machine Learning",
+      type: "data-science",
       description: "Constructed a global shipping network using machine learning (KNN, DBSCAN) and graph theory to model maritime routes and traffic patterns. Designed and implemented a data processing pipeline to clean AIS data and compress vessel trajectories. Analysed maritime traffic variability and congestion to provide insights into global shipping routes and supply chains.",
       image: "/portfolio-app/assets/img/gsn3.png",
       githubLink: "https://github.com/Nefelie/AIS_GSN",
@@ -27,6 +29,7 @@
     },
     {
       title: "Simulation and Software Development of Perception System for an Autonomous Vessel (LiDAR and Stereo Cameras)",
+      type: "robotics",
       description: "Designed and simulated a perception system using stereo cameras and LiDAR using Gazebo and ROS2 for autonomous navigation to enhance collision avoidance capabilities in dynamic marine environments. Developed object detection algorithms for vision and point cloud data under varying weather conditions. Integrated the perception system with obstacle avoidance sub-systems in a multidisciplinary team.",
       image: "/portfolio-app/assets/img/GDP7.png",
       githubLink: "https://github.com/Nefelie/VRX-Camera-and-Lidar-Simulation",
@@ -40,6 +43,7 @@
     },
     {
       title: "Global Shipping Corrosion Map using an Artifical Neural Network",
+      type: "data-science",
       description: "Generated a global marine corrosion map for shipping using AI/machine learning for integration into a digital twin for marine structures, supporting improved ship design and maintenance strategies to reduce costs. Implemented and trained an artificial neural network to predict corrosion depth based on geospatial ocean datasets.",
       image: "/portfolio-app/assets/img/GlobalCorrosion.png",
       githubLink: "https://github.com/Nefelie/global_corrosion_map",
@@ -51,6 +55,7 @@
     },
     {
       title: "AIS Data Plotter Web App",
+      type: "data-science",
       description: "An interactive web application for visualizing AIS (Automatic Identification System) data for ships. This tool enables users to dynamically upload and visualize ship position data from .pkl files on a map, with customizable color options for different datasets. The frontend is built with Svelte, MapLibre GL, and TypeScript, while the backend uses FastAPI.",
       image: "/portfolio-app/assets/img/ais-plotter.png",
       githubLink: "https://github.com/Nefelie/ais-plotter",
@@ -63,6 +68,7 @@
     },
     {
       title: "SLAM and Perception System Development for an Intelligent Mobile Robot",
+      type: "robotics",
       description: "Worked with ZeroROS robot middleware and Webots simulation environment to develop software for the robot. Implemented state-space control, an EKF & particle filter for probabilistic localisation and interpreted live LiDAR sensor data using a Gaussian Process Classifier and Regressor to detect walls and corners from the track as part of the perception system on the physical robotic platform. Developed a Graph SLAM algorithm.",
       image: "/portfolio-app/assets/img/imr.jpg",
       githubLink: "https://github.com/Nefelie/slam-wheeled-robot",
@@ -75,6 +81,7 @@
     },
     {
       title: "Guidance, Control & Navigation of an Autonomous Vessel",
+      type: "robotics",
       description: "Implemented PID control, artificial potential fields (path planning), line of sight guidance (path following), and an Extended Kalman Filter (probabilistic localisation/sensor fusion) through python simulations. Worked with actuators (differential thrust motors) & sensors, including an IMU (heading control) and ArUco markers for localisation, to implement the software on the vessel.",
       image: "/portfolio-app/assets/img/mr.jpg",
       githubLink: "https://github.com/Nefelie/gnc-autonomous-vessel",
@@ -85,6 +92,20 @@
       ]
     }
   ];
+
+
+   // State for filtering
+   let currentFilter = 'all';
+
+  // Filtered projects computed property
+  $: filteredProjects = currentFilter === 'all' 
+    ? projects 
+    : projects.filter(project => project.type === currentFilter);
+
+  // Function to set filter
+  function setFilter(filter) {
+    currentFilter = filter;
+  }
 
   // Full skills data matching original
   const programmingSkills = [
@@ -134,7 +155,7 @@
         "Specialised in <b>Robotics</b>",
         "<i>Relevant Modules</i>: Maritime Robotics, Intelligent Mobile Robotics, Machine Learning, Ship Manoeuvring and Control, System Design and Computing for Ships, Mechanics, Ship Resistance and Propulsion, Marine Hydrodynamics,  Ship Design and Economics, Project Risk Management, Maritime Safety: Risk, Environment and Law",
         "<i>Master’s Group Design Project</i>: Perception System Design for an Autonomous Surface Vessel",
-        "<i>Bachelor’s Thesis</i>: “Constructing a Global Shipping Network Using AIS Data and Graph Theory to Enhance Maritime Situational Awareness” (see link)", 
+        '<i>Bachelor’s Thesis</i>: "Constructing a Global Shipping Network Using AIS Data and Graph Theory to Enhance Maritime Situational Awareness"', 
 
       ]
     }
@@ -142,7 +163,7 @@
 
   const workExperience = [
   {
-    title: "Research Assistant - AI/Machine Learning for Digital Twin in Shipping",
+    title: "Research Assistant: AI/Machine Learning for Digital Twin in Shipping",
     company: "University of Southampton, Marine & Maritime Institute",
     period: "Jul 2023 - Aug 2023",
     logo: "/portfolio-app/assets/icons/UoS.jpg",
@@ -175,6 +196,40 @@
   }
 ];
 
+
+const courses = [
+    {
+      degree: "Maritime Robotics & Informatics",
+      institution: "Intelligent Transportation Systems Lab (Smart MOVE), University of the Aegean, Greece",
+      period: "Jul 2023",
+      logo: "/portfolio-app/assets/icons/PA.jpg", 
+      highlights: [
+        "Built and tested a Remotely Operated Vessel (ROV).",
+        "Attended labs and seminars on maritime data analytics, machine learning for trajectory forecasting, collision avoidance, and digital twins.", 
+      ]
+    }, 
+    {
+      degree: "Machine Learning",
+      institution: "Stanford University (Coursera Online)",
+      period: "Sept 2021",
+      logo: "/portfolio-app/assets/icons/SA.jpg", 
+      highlights: [
+        "Grade: 97%",
+        "Covered single and multivariable linear regression, logistic regression, regularisation, neural networks, support vector machines, unsupervised learning, dimensionality reduction, anomaly detection, recommender systems, large scale machine learning, application of photo optical character recognition.", 
+      ]
+    },
+    {
+      degree: "Digital Engineering",
+      institution: "Hasso Plattner Institute, University of Potsdam, Germany",
+      period: "Aug 2019",
+      logo: "/portfolio-app/assets/icons/HPI.jpg", 
+      highlights: [
+        "Explored methods of design thinking in order to identify and address problems in the areas of project management, software development in a team, web technology and working with APIs and implementing a telegram bot.", 
+      ]
+    }
+  ];
+
+
 </script>
 
 <div class="navbar">
@@ -182,6 +237,7 @@
   <div class="right">
     <a href="#education" class="nav-link">Education</a>
     <a href="#experience" class="nav-link">Work Experience</a>
+    <a href="#courses" class="nav-link">Courses</a>
     <a href="#projects" class="nav-link">Projects</a>
   </div>
 </div>
@@ -309,47 +365,91 @@
         {/each}
       </section>
       
+
+      <section id="courses">
+        <h2>Courses</h2>
+        {#each courses as course}
+          <div class="experience-item">
+            {#if course.logo}
+              <div class="edu-header">
+                <img src={course.logo} alt="Company Logo" class="company-logo" />
+                <div class="edu-info">
+                  <h3>{course.degree}</h3>
+                  <h4>{course.institution}</h4>
+                </div>
+              </div>
+              <p class="period">{course.period}</p>
+            {/if}
+            <ul>
+              {#each course.highlights as highlight}
+                <li>{@html highlight}</li>
+              {/each}
+            </ul>
+          </div>
+        {/each}
       
 
 
-      <section id="projects">
-        <h2>Projects</h2>
-        {#each projects as project}
-        <a 
-        href={`${project.githubLink}/blob/main/README.md`} 
-        target="_blank" 
-        style="text-decoration: none; color: inherit;"
-      >
-            <div class="project">
-              <div class="project-image">
-                <img src={project.image} alt="Project Image" />
-              </div>
-              <div class="project-details">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div class="skills-container">
-                  <div class="skills">
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
-                      class="skill-tag github-link"
-                    >
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                    {#each project.skills as skill}
-                      <span class="skill-tag">
-                        <img src={skill.icon} alt={skill.name} />
-                        {skill.name}
-                      </span>
-                    {/each}
+        <div id="projects">
+          <h2>Projects</h2>
+          
+          <!-- Filter Buttons -->
+          <div class="project-filters">
+            <button 
+              class={currentFilter === 'all' ? 'active' : ''} 
+              on:click={() => setFilter('all')}
+            >
+              All
+            </button>
+            <button 
+              class={currentFilter === 'robotics' ? 'active' : ''} 
+              on:click={() => setFilter('robotics')}
+            >
+              Robotics
+            </button>
+            <button 
+              class={currentFilter === 'data-science' ? 'active' : ''} 
+              on:click={() => setFilter('data-science')}
+            >
+              Data Science
+            </button>
+          </div>
+        
+          {#each filteredProjects as project}
+            <a 
+              href={`${project.githubLink}/blob/main/README.md`} 
+              target="_blank" 
+              style="text-decoration: none; color: inherit;"
+            >
+              <div class="project">
+                <div class="project-image">
+                  <img src={project.image} alt="Project Image" />
+                </div>
+                <div class="project-details">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div class="skills-container">
+                    <div class="skills">
+                      <a 
+                        href={project.githubLink} 
+                        target="_blank" 
+                        class="skill-tag github-link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      {#each project.skills as skill}
+                        <span class="skill-tag">
+                          <img src={skill.icon} alt={skill.name} />
+                          {skill.name}
+                        </span>
+                      {/each}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </a>
-        {/each}
-      </section>
-
+            </a>
+          {/each}
+        </div>
 
 
     </main>
@@ -375,7 +475,7 @@
     --navbar-text: #ffffff;
     --project-bg: #323232;
     --button-bg: #4a4a4a;
-    --button-hover: #5c5c5c;
+    --button-hover: #8b8b8b;
     --skill-tag-bg: #c7e2ff;
     --skill-tag-text: #000000;
     --skill-tag-hover: #a0d0ff;
@@ -388,8 +488,8 @@
       --navbar-bg: #ffffff;
       --navbar-text: #000000;
       --project-bg: #ffffff;
-      --button-bg: #8f8f8f;
-      --button-hover: #4a4a4a;
+      --button-bg: #4d4d4d;
+      --button-hover: #828181;
       --skill-tag-bg: #e3f2fd;
       --skill-tag-text: #1a1a1a;
       --skill-tag-hover: #bbdefb;
@@ -450,339 +550,346 @@
 }
 
 
-  .layout {
-    display: flex;
-    margin-top: 60px;
-    flex: 1;
-  }
+.layout {
+  display: flex;
+  margin-top: 60px;
+  flex: 1;
+}
 
-  /* Sidebar */
-  .sidebar {
-    width: clamp(200px, 20%, 350px);
-    padding: 20px 20px;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-left: 5%;
-    border-radius: 10px;
-    height: calc(100vh - 60px);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: transparent;
-  }
+/* Sidebar */
+.sidebar {
+  width: clamp(200px, 20%, 350px);
+  padding: 20px 20px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 5%;
+  border-radius: 10px;
+  height: calc(100vh - 60px);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: transparent;
+}
 
-  .sidebar .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    object-fit: cover;
-    margin-bottom: 15px;
-    align-self: flex-start;
-  }
+.sidebar .profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
 
-  .sidebar h3 {
-    margin: 10px 0 0;
-    font-size: 1.5rem;
-    text-align: left;
-    color: var(--text-color);
-  }
+.sidebar h3 {
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  text-align: left;
+  color: var(--text-color);
+}
 
-  .sidebar p {
-    margin: 10px 0 0;
-    font-size: 0.9rem;
-    text-align: left;
-    color: var(--text-color);
-  }
+.sidebar p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  text-align: left;
+  color: var(--text-color);
+}
 
-  /* Social Links */
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
+/* Social Links */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
 
-  .social-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 5px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s;
-  }
+.social-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s;
+}
 
-  .social-link i {
-    font-size: 1.2rem;
-  }
+.social-link i {
+  font-size: 1.2rem;
+}
 
-  .social-link:hover {
-    color: #c7e2ff;
-  }
+.social-link:hover {
+  color: #c7e2ff;
+}
 
-  .social-link span {
-    font-size: 0.8rem;
-    margin-left: 5px;
-  }
+.social-link span {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
 
-  /* CV Download Button */
-  .cv-download-button {
-    background-color: var(--button-bg);
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    display: inline-block;
-    width: 120px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
+/* CV Download Button */
+.cv-download-button {
+  background-color: var(--button-bg);
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
 
-  .cv-download-button:hover {
-    background-color: var(--button-hover);
-  }
+.cv-download-button:hover {
+  background-color: var(--button-hover);
+}
 
-  /* Skills Section */
-  .sidebar-skills {
-    margin-top: 20px;
-    width: 100%;
-    text-align: left;
-  }
+/* Skills Section */
+.sidebar-skills {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+}
 
-  .sidebar-skills h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    text-align: left;
-  }
+.sidebar-skills h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  text-align: left;
+}
 
-  .sidebar .tech-category {
-    margin-bottom: 10px;
-    text-align: left;
-  }
+.sidebar .tech-category {
+  margin-bottom: 10px;
+  text-align: left;
+}
 
-  .sidebar .tech-category h4 {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-bottom: 5px;
-    font-weight: normal;
-  }
+.sidebar .tech-category h4 {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  font-weight: normal;
+}
 
-  /* Main Content */
-  #app {
-    flex: 1;
-    margin-left: 25%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-
-
-  #projects h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-    color: var(--text-color);
-  }
-
-  .project {
-    display: flex;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: var(--project-bg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 1200px;
-    width: 100%;
-    align-items: center;
-    font-weight: normal;
-  }
-
-  .project:hover {
-    transform: scale(1.02);
-  }
-
-  .project-image {
-    flex: 1;
-    max-width: 200px;
-    margin-right: 20px;
-    position: relative;
-  }
-
-  .project-image img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .project-details {
-    flex: 2;
-    text-align: left;
-  }
-
-  .project-details h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
-  }
-
-  .project-details p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    color: var(--text-color);
-  }
-
-  /* Skills Container and Tags */
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .skill-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 10px;
-    background-color: var(--skill-tag-bg);
-    color: var(--skill-tag-text);
-    font-size: 0.9rem;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-  }
-
-  .skill-tag img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-  }
-
-  .skill-tag:hover {
-    background-color: var(--skill-tag-hover);
-    cursor: pointer;
-  }
-
-  /* GitHub Link in Projects */
-  .skills .github-link {
-    background-color: transparent !important;
-    color: var(--text-color);
-  }
-
-  .github-link:hover {
-    color: var(--text-color);
-    opacity: 0.8;
-    cursor: pointer;
-  }
-
-  .github-link i {
-    font-size: 1rem;
-  }
-
-  /* Sidebar Skills Specific */
-  .sidebar .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: flex-start;
-  }
-
-  .sidebar .skill-tag {
-    padding: 3px 8px;
-    font-size: 0.9rem;
-  }
-
-  .sidebar .skill-tag img {
-    width: 12px;
-    height: 12px;
-    margin-right: 3px;
-  }
-
-
-  #education, #experience, #projects {
-    padding: 1rem 20px; /* First value vertical padding*/
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    max-width: 1200px;
-    width: 100%;
-    margin-bottom: 0px; /* Adjust this value to reduce or increase space between sections */
-  }
+/* Main Content */
+#app {
+  flex: 1;
+  margin-left: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
 
 
-  #education h2, #experience h2, #projects h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-align: left;
-    color: var(--text-color);
-  }
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.project {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--project-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  font-weight: normal;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.project-image {
+  flex: 1;
+  max-width: 200px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-details {
+  flex: 2;
+  text-align: left;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.project-details p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+/* Skills Container and Tags */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background-color: var(--skill-tag-bg);
+  color: var(--skill-tag-text);
+  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.skill-tag img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.skill-tag:hover {
+  background-color: var(--skill-tag-hover);
+  cursor: pointer;
+}
+
+/* GitHub Link in Projects */
+.skills .github-link {
+  background-color: transparent !important;
+  color: var(--text-color);
+}
+
+.github-link:hover {
+  color: var(--text-color);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.github-link i {
+  font-size: 1rem;
+}
+
+/* Sidebar Skills Specific */
+.sidebar .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.sidebar .skill-tag {
+  padding: 3px 8px;
+  font-size: 0.9rem;
+}
+
+.sidebar .skill-tag img {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+}
 
 
-  .education-section, .work-experience-section, .projects-section {
-    margin-bottom: 10px; /* Adjust this value to reduce or increase space between sections */
-  }
-
-  .experience-item {
-    background-color: var(--project-bg);
-    padding: 20px;
-    margin-bottom: 20px; /* space between individual experience items */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease;
-  }
-
-  .experience-item:hover {
-    transform: scale(1.02);
-  }
-
-  .experience-item h3 {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    margin-bottom: 5px;
-  }
-
-  .experience-item h4 {
-    font-size: 1.0rem;
-    color: var(--text-color);
-    margin-bottom: 5px;
-    opacity: 0.8;
-  }
-
-  .experience-item .period {
-    color: var(--text-color);
-    margin-bottom: 10px;
-    font-style: italic;
-    opacity: 0.7;
-  }
-
-  .experience-item ul {
-    padding-left: 20px;
-    list-style-type: disc;
-    color: var(--text-color);
-  }
-
-  .experience-item li {
-    margin-bottom: 5px;
-    line-height: 1.4;
-  }
+#education, #experience, #courses, #projects {
+  padding: 1rem 20px; /* First value vertical padding*/
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 0px; /* Adjust this value to reduce or increase space between sections */
+}
 
 
-  .edu-header {
+
+#education h2, #experience h2, #courses h2, #projects h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+#education a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  font-weight: normal !important;
+}
+
+
+
+.education-section, .work-experience-section, .projects-section {
+  margin-bottom: 10px; /* Adjust this value to reduce or increase space between sections */
+}
+
+.experience-item {
+  background-color: var(--project-bg);
+  padding: 20px;
+  margin-bottom: 20px; /* space between individual experience items */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: scale(1.02);
+}
+
+.experience-item h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.experience-item h4 {
+  font-size: 1.0rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.experience-item .period {
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.experience-item ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: var(--text-color);
+}
+
+.experience-item li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+
+.edu-header {
   display: flex;
   align-items: center;
   gap: 10px; /* Space between the logo and text */
@@ -802,16 +909,38 @@
 
 
 .company-logo {
-    width: 50px; /* Adjust the size */
-    height: auto;
-    vertical-align: middle; /* Aligns the logo vertically with text */
-    border-radius: 4px; /* Optional: Rounded corners */
+  width: 50px; /* Adjust the size */
+  height: auto;
+  vertical-align: middle; /* Aligns the logo vertically with text */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+h5 {
+  font-size: 1.0em;  /* Slightly larger than the default font size */
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+
+.project-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
-  h5 {
-    font-size: 1.0em;  /* Slightly larger than the default font size */
-    font-weight: bold;
-    margin-top: 1rem;
+  .project-filters button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .project-filters button.active,
+  .project-filters button:hover {
+    background-color: var(--button-hover);
   }
 
 
