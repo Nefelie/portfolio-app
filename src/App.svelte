@@ -233,11 +233,11 @@ const courses = [
 </script>
 
 <div class="navbar">
-  <div class="left">Portfolio</div>
+  <div class="left">Portfolio: Nefelie Hemrich</div>
   <div class="right">
     <a href="#education" class="nav-link">Education</a>
     <a href="#experience" class="nav-link">Work Experience</a>
-    <a href="#courses" class="nav-link">Courses</a>
+    <a href="#courses" class="nav-link">Further Training</a>
     <a href="#projects" class="nav-link">Projects</a>
   </div>
 </div>
@@ -251,10 +251,10 @@ const courses = [
       class="profile-pic"
     />
     <h3>Nefelie Hemrich</h3>
+    <h4>MEng Maritime Engineering | University of Southampton, UK</h4>
     <p>
-      MEng Maritime Engineering graduate from the University of Southampton, UK.
       Passionate about using data science, AI/machine learning, and robotics to
-      solve complex challenges and drive innovation in the maritime industry.
+      solve complex challenges in the maritime field, with a focus on advancing maritime safety and preserving ocean health.
     </p>
     <a
       href="/portfolio-app/assets/docs/CV.pdf"
@@ -367,7 +367,7 @@ const courses = [
       
 
       <section id="courses">
-        <h2>Courses</h2>
+        <h2>Further Training </h2>
         {#each courses as course}
           <div class="experience-item">
             {#if course.logo}
@@ -488,8 +488,8 @@ const courses = [
       --navbar-bg: #ffffff;
       --navbar-text: #000000;
       --project-bg: #ffffff;
-      --button-bg: #4d4d4d;
-      --button-hover: #828181;
+      --button-bg: #e1e1e1;
+      --button-hover: #a7a7a7;
       --skill-tag-bg: #e3f2fd;
       --skill-tag-text: #1a1a1a;
       --skill-tag-hover: #bbdefb;
@@ -590,8 +590,15 @@ const courses = [
   color: var(--text-color);
 }
 
+.sidebar h4 {
+  text-align: left;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+
 .sidebar p {
-  margin: 10px 0 0;
+  margin: 5px 0 0;
   font-size: 0.9rem;
   text-align: left;
   color: var(--text-color);
@@ -632,7 +639,7 @@ const courses = [
 /* CV Download Button */
 .cv-download-button {
   background-color: var(--button-bg);
-  color: #ffffff;
+  color: var(--navbar-text);
   padding: 8px 15px;
   border-radius: 4px;
   text-decoration: none;
