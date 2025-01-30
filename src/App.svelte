@@ -152,7 +152,7 @@
       highlights: [
         "Grade: First Class Honours (average: 79%)", 
         'Best Performing Student prize (£1,000) awarded by <a href="https://www.shipwrights.co.uk/" target="_blank">UK Worshipful Company of Shipwrights</a>',
-        "Specialised in <b>Robotics</b>",
+        'Specialised in <b style="font-weight: 600;">Robotics</b>',
         "<i>Relevant Modules</i>: Maritime Robotics, Intelligent Mobile Robotics, Machine Learning, Ship Manoeuvring and Control, System Design and Computing for Ships, Mechanics, Ship Resistance and Propulsion, Marine Hydrodynamics,  Ship Design and Economics, Project Risk Management, Maritime Safety: Risk, Environment and Law",
         "<i>Master’s Group Design Project</i>: Perception System Design for an Autonomous Surface Vessel",
         '<i>Bachelor’s Thesis</i>: "Constructing a Global Shipping Network Using AIS Data and Graph Theory to Enhance Maritime Situational Awareness"', 
@@ -164,7 +164,7 @@
   const workExperience = [
   {
     title: "Research Assistant: AI/Machine Learning for Digital Twin in Shipping",
-    company: "University of Southampton, Marine & Maritime Institute",
+    company: "Marine & Maritime Institute, University of Southampton",
     period: "Jul 2023 - Aug 2023",
     logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
@@ -180,7 +180,7 @@
   },
   {
     title: "Research Assistant: Concept Design of LCO2 Carrier for Shell Shipping & Maritime",
-    company: "University of Southampton, Marine & Maritime Institute",
+    company: "Marine & Maritime Institute, University of Southampton",
     period: "Jun 2022 - Sept 2022",
     logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
@@ -477,7 +477,7 @@ const courses = [
   --project-bg: #ffffff;
   --button-bg: #e1e1e1;
   --button-hover: #a7a7a7;
-  --skill-tag-bg: #c4e7ff;
+  --skill-tag-bg: #c4e7fd;
   --skill-tag-text: #1a1a1a;
   --skill-tag-hover: #bbdefb;
 }
@@ -507,6 +507,7 @@ const courses = [
     color: var(--text-color);
     overflow-x: hidden;
   }
+  a { color: #007bff } /* Globally */
 
   .navbar {
   position: fixed;
@@ -520,7 +521,7 @@ const courses = [
   padding: 10px 5%; /* Adjust padding to match layout */
   z-index: 1000;
   transition: all 0.3s ease;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 /* For the left part of the navbar */
@@ -550,13 +551,13 @@ const courses = [
 }
 
 .navbar a:hover {
-  color: #429eff;
+  color: #007bff;
 }
 
 
 .layout {
   display: flex;
-  margin-top: 60px;
+  padding-top: 60px; /* Instead of margin */
   flex: 1;
 }
 
@@ -632,7 +633,7 @@ const courses = [
 }
 
 .social-link:hover {
-  color: #c7e2ff;
+  color: #007bff;
 }
 
 .social-link span {
@@ -667,10 +668,11 @@ const courses = [
 }
 
 .sidebar-skills h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  /* margin-bottom: 10px; */
   color: var(--text-color);
   text-align: left;
+  font-weight: 600;
 }
 
 .sidebar .tech-category {
@@ -682,7 +684,7 @@ const courses = [
   font-size: 1rem;
   color: var(--text-color);
   margin-bottom: 5px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 /* Main Content */
@@ -743,6 +745,7 @@ const courses = [
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: var(--text-color);
+  font-weight: 600;
 }
 
 .project-details p {
@@ -840,6 +843,8 @@ const courses = [
   margin-bottom: 10px;
   text-align: left;
   color: var(--text-color);
+  font-weight: 600;
+
 }
 
 #education a {
@@ -869,16 +874,20 @@ const courses = [
 }
 
 .experience-item h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 5px;
+  font-weight: 600;
+
 }
 
 .experience-item h4 {
-  font-size: 1.0rem;
+  font-size: 1.1rem;
   color: var(--text-color);
   margin-bottom: 5px;
   opacity: 0.8;
+  font-weight: 600;
+
 }
 
 .experience-item .period {
@@ -928,8 +937,10 @@ const courses = [
 
 h5 {
   font-size: 1.0em;  /* Slightly larger than the default font size */
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 1rem;
+  color: var(--text-color);
+
 }
 
 
@@ -1109,6 +1120,7 @@ h5 {
 
   .experience-item h5 {
     font-size: 1.1rem;  /* Slightly larger than the list items */
+    color: var(--text-color);
   }
   }
 
