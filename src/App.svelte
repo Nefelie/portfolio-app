@@ -161,21 +161,21 @@
     }
   ];
 
-  const workExperience = [
+const workExperience = [
   {
     title: "Research Assistant: AI/Machine Learning for Digital Twin in Shipping",
     company: "Marine & Maritime Institute, University of Southampton",
     period: "Jul 2023 - Aug 2023",
     logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
-      "Work with geospatial ocean datasets to tackle the multi-variate challenge of corrosion prediction for integration into a digital twin for marine structures.",
-      "Enhance the geospatial and temporal fidelity of existing research on corrosion rates for ships globally.",
-      "Assess how a map of global corrosion rates can factor in different climate change scenarios."
+      "Worked with geospatial ocean datasets to tackle the multi-variate challenge of corrosion prediction for integration into a digital twin for marine structures.",
+      "Enhanced the geospatial and temporal fidelity of existing research on corrosion rates for ships globally.",
+      "Assessed how a map of global corrosion rates could factor in different climate change scenarios."
     ],
     achievements: [
       "Implemented an artificial neural network and compared different architectures and model types to predict corrosion rates globally.",
-      "Developed a high resolution map predicting corrosion rates for vessels globally.",
-      "Identified biases in original dataset which resulted in poor model performance."
+      "Developed a high-resolution map predicting corrosion rates for vessels globally.",
+      "Identified biases in the original dataset which resulted in poor model performance."
     ]
   },
   {
@@ -184,8 +184,8 @@
     period: "Jun 2022 - Sept 2022",
     logo: "/portfolio-app/assets/icons/UoS.jpg",
     responsibilities: [
-      "Evaluate the transport efficiency of different vessel designs transporting novel future fuels including hydrogen and ammonia.",
-      "Develop a concept design for a net-zero LCO2 bulk carrier to support the UK’s decarbonisation targets."
+      "Evaluated the transport efficiency of different vessel designs transporting novel future fuels, including hydrogen and ammonia.",
+      "Developed a concept design for a net-zero LCO2 bulk carrier to support the UK’s decarbonisation targets."
     ],
     achievements: [
       "Researched novel ways of obtaining a stability estimate for a new ship type to transport future fuels.",
@@ -195,6 +195,7 @@
     ]
   }
 ];
+
 
 
 const courses = [
@@ -229,18 +230,50 @@ const courses = [
     }
   ];
 
+  
+  let isMenuOpen = false; // Track the menu open/close state
+
+  // Toggle menu visibility
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close the menu when a menu item is clicked
+  function closeMenu() {
+    isMenuOpen = false;
+  }
+
+
 
 </script>
 
 <div class="navbar">
-  <div class="left">Portfolio: Nefelie Hemrich</div>
+  <!-- Left side of the navbar -->
+  <div class="left">
+    <a href="/">Portfolio: Nefelie Hemrich</a>
+  </div>
+
+  <!-- Right side of the navbar -->
   <div class="right">
-    <a href="#education" class="nav-link">Education</a>
-    <a href="#experience" class="nav-link">Work Experience</a>
-    <a href="#courses" class="nav-link">Further Training</a>
-    <a href="#projects" class="nav-link">Projects</a>
+    <div class="hamburger" on:click={toggleMenu}>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Menu items -->
+    <div class={`menu ${isMenuOpen ? 'open' : ''}`}>
+      <a href="#education" on:click={closeMenu}>Education</a>
+      <a href="#experience" on:click={closeMenu}>Work Experience</a>
+      <a href="#courses" on:click={closeMenu}>Further Training</a>
+      <a href="#projects" on:click={closeMenu}>Projects</a>
+    </div>
   </div>
 </div>
+
+  <!-- <div class="left">Portfolio: Nefelie Hemrich</div> -->
+
+
 
 <div class="layout">
   <!-- Left Sidebar -->
@@ -536,15 +569,16 @@ const courses = [
 /* For the right part of the navbar */
 .navbar .right {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
   font-size: 1.2rem;
   justify-content: flex-start; /* Align items to the left */
   margin-left: 5%; /* Match the left padding of the projects section */
 }
 
-/* For navbar links */
+/* Navbar links */
 .navbar a {
-  font-weight:600;
+  font-weight: 600;
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
@@ -553,6 +587,45 @@ const courses = [
 .navbar a:hover {
   color: #007bff;
 }
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 8px;
+  position: absolute; /* Absolute positioning */
+  right: 20px; /* Adjusted for positioning */
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%); /* Ensure vertical centering */
+}
+
+/* The bars of the hamburger */
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: var(--navbar-text);
+  border-radius: 5px;
+}
+
+/* Menu items - hidden by default on small screens */
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px; /* Positioning below the navbar */
+  right: 0;
+  background-color: var(--navbar-bg);
+  width: 100%;
+  padding: 10px 0;
+}
+
 
 
 .layout {
@@ -990,13 +1063,24 @@ h5 {
     .navbar {
       padding: 10px 20px;
       flex-direction: column;
-      align-items: center;
+      /* align-items: center; */
     }
 
-    .navbar .right {
+    /* .navbar .right {
       margin-top: 10px;
       gap: 1rem;
-    }
+    } */
+
+    .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* Show the hamburger icon on mobile */
+  .hamburger {
+    display: flex;
+  }
 
     .layout {
       flex-direction: column;
