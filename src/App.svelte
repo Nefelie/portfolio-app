@@ -464,11 +464,28 @@ const courses = [
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ffffff;
     
   }
 
   :root {
-    /* Dark mode colors */
+  /* Light mode colors (default) */
+  --bg-color: #f5f5f5;
+  --text-color: #1a1a1a;
+  --navbar-bg: #ffffff;
+  --navbar-text: #000000;
+  --project-bg: #ffffff;
+  --button-bg: #e1e1e1;
+  --button-hover: #a7a7a7;
+  --skill-tag-bg: #c4e7ff;
+  --skill-tag-text: #1a1a1a;
+  --skill-tag-hover: #bbdefb;
+}
+
+
+/* Comment out this media query to disable dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
     --bg-color: #1a1a1a;
     --text-color: #ffffff;
     --navbar-bg: #151515;
@@ -480,21 +497,7 @@ const courses = [
     --skill-tag-text: #000000;
     --skill-tag-hover: #a0d0ff;
   }
-
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg-color: #f5f5f5;
-      --text-color: #1a1a1a;
-      --navbar-bg: #ffffff;
-      --navbar-text: #000000;
-      --project-bg: #ffffff;
-      --button-bg: #e1e1e1;
-      --button-hover: #a7a7a7;
-      --skill-tag-bg: #e3f2fd;
-      --skill-tag-text: #1a1a1a;
-      --skill-tag-hover: #bbdefb;
-    }
-  }
+} */
 
   body {
     margin: 0;
@@ -540,13 +543,14 @@ const courses = [
 
 /* For navbar links */
 .navbar a {
+  font-weight:600;
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #c7e2ff;
+  color: #429eff;
 }
 
 
