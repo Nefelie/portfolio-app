@@ -1,3 +1,5 @@
+<!-- remove space on mobile under navbar -->
+<!-- top align images in experience -->
 <script>
   import { onMount } from 'svelte';
 
@@ -250,7 +252,7 @@ const courses = [
 <div class="navbar">
   <!-- Left side of the navbar -->
   <div class="left">
-    <a href="/">Portfolio: Nefelie Hemrich</a>
+    <a href="/portfolio-app/">Portfolio: Nefelie Hemrich</a>
   </div>
 
   <!-- Right side of the navbar -->
