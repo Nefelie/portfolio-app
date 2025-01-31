@@ -1041,6 +1041,21 @@ h5 {
   }
 
 
+  .edu-header {
+    align-items: flex-start; /* Change from center to flex-start to align at the top */
+  }
+
+  .edu-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts from the top */
+  }
+
+  .edu-logo, .company-logo {
+    margin-top: 4px; /* Small adjustment to perfectly align with the first line of text */
+  }
+
+
   /* Media Queries */
   @media screen and (min-width: 768px) and (max-width: 1000px) {
     #projects {
@@ -1059,6 +1074,20 @@ h5 {
     .project-details {
       text-align: center;
     }
+
+    .edu-header {
+    align-items: flex-start; /* Change from center to flex-start to align at the top */
+  }
+
+  .edu-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts from the top */
+  }
+
+  .edu-logo, .company-logo {
+    margin-top: 4px; /* Small adjustment to perfectly align with the first line of text */
+  }
   }
 
   @media screen and (max-width: 768px) {
@@ -1144,7 +1173,19 @@ h5 {
 
 
 
+    .edu-header {
+    align-items: flex-start; /* Change from center to flex-start to align at the top */
+  }
 
+  .edu-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts from the top */
+  }
+
+  .edu-logo, .company-logo {
+    margin-top: 4px; /* Small adjustment to perfectly align with the first line of text */
+  }
 
 
 
