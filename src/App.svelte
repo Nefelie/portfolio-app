@@ -1113,10 +1113,11 @@ h5 {
     display: flex;
   }
 
-    .layout {
+  .layout {
       flex-direction: column;
-      margin-top: 120px;
+      margin-top: 60px; /* Reduced from 120px */
       padding-left: 0;
+      padding-top: 0; /* Remove additional padding */
     }
 
     .sidebar {
