@@ -288,8 +288,7 @@ const courses = [
     <h3>Nefelie Hemrich</h3>
     <h4>MEng Maritime Engineering | University of Southampton, UK</h4>
     <p>
-      Passionate about using data science, AI/machine learning, and robotics to
-      solve complex challenges in the maritime field, with a focus on advancing maritime safety and preserving ocean health.
+Specialised in Robotics in my Master's degreee, with a focus on guidance, control, navigation and SLAM software for autonomous vessels and land-based mobile robots. I have work experience in AI/machine learning applications for the shipping industry and am keen to explore the intersection between robotics, AI, and data science to solve challenges in autonomy.
     </p>
     <a
       href="/portfolio-app/assets/docs/CV.pdf"
